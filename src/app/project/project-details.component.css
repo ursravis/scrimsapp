@@ -1,0 +1,24 @@
+.custom-component-drop-zone {
+      width: 300px;
+      height: 100px;
+    }
+
+    .uploader {
+    position:relative; 
+    overflow:hidden; 
+    width:300px; 
+    height:50px;
+    background:#f3f3f3; 
+    border:2px dashed #e8e8e8;
+}
+
+#filePhoto{
+    position:absolute;
+    width:300px;
+    height:50px;
+    top:0px;
+    left:0;
+    z-index:2;
+    opacity:0;
+    cursor:pointer;
+}

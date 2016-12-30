@@ -1,0 +1,80 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Provides secure and convenient logon to Web sites\",\"cmd_addlogin\":\"Add to Password Manager\",\"cmd_openpm\":\"Open Password Manager\",\"cmd_settings\":\"Icon Settings\",\"cmd_help\":\"Help\",\"cmd_fillin\":\"Fill in logon data\",\"cmd_editprofile\":\"Edit logon\",\"cmd_addprofile\":\"Add logon\",\"cmd_chgpsw\":\"Change Password...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Would you like Password Manager to remember the password for {account} on {domain}?\",\"dpmaxs_txt_bodyupd\":\"Would you like Password Manager to update the password for {account} on {domain}?\",\"dpmaxs_txt_ok\":\"Remember\",\"dpmaxs_txt_no\":\"No, thanks\",\"dpmaxs_txt_ne\":\"Never for this site\",\"dpmaxs_txt_popup_msg\":\"\u003Cdiv style=\\\"width:300px\\\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>\",\"dpmaxs_txt_popup_layout\":\"\u003Cdiv style=\\\"width:300px\\\">\u003Cdiv id=\\\"dpmaxz_state\\\">\u003C/div>\u003Cdiv id=\\\"dpmaxz_fix\\\">\u003C/div>\u003C/div>\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager extension is not working properly.\",\"dpmaxs_txt_popup_infoActivate\":\"The HP Client Security Manager extension is not working because the HP Client Security Manager plug-in has not been activated.\",\"dpmaxs_txt_popup_infoMultiple\":\"The HP Client Security Manager extension is not working because multiple versions of the HP Client Security Manager extension are installed.\",\"dpmaxs_txt_popup_infoWrongVer\":\"The HP Client Security Manager extension is not working because the installed version of the HP Client Security Manager extension is not compatible with the HP Client Security Manager plug-in.\",\"dpmaxs_txt_popup_actOpen\":\"Open the HP Client Security Manager User Console Browser Integration Page for further instructions.\",\"dpmaxs_txt_popup_actRemove\":\"Only one version of the {ProductName] extension should be enabled. Any other versions should be disabled or uninstalled.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Add to Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Add logon"
+   },
+   "cmd_chgpsw": {
+      "message": "Change Password..."
+   },
+   "cmd_editprofile": {
+      "message": "Edit logon"
+   },
+   "cmd_fillin": {
+      "message": "Fill in logon data"
+   },
+   "cmd_help": {
+      "message": "Help"
+   },
+   "cmd_openpm": {
+      "message": "Open Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Icon Settings"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Would you like Password Manager to remember the password for {account} on {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Would you like Password Manager to update the password for {account} on {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Never for this site"
+   },
+   "dpmaxs_txt_no": {
+      "message": "No, thanks"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Remember"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Open the HP Client Security Manager User Console Browser Integration Page for further instructions."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Only one version of the {ProductName] extension should be enabled. Any other versions should be disabled or uninstalled."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "The HP Client Security Manager extension is not working because the HP Client Security Manager plug-in has not been activated."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "The HP Client Security Manager extension is not working because multiple versions of the HP Client Security Manager extension are installed."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "The HP Client Security Manager extension is not working because the installed version of the HP Client Security Manager extension is not compatible with the HP Client Security Manager plug-in."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager extension is not working properly."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Provides secure and convenient logon to Web sites"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   },
+   "html_dogbar": {
+      "message": "\u003Cdiv style=\"position:absolute;\"> \u003Cdiv class=\"dpmaxz_fbb_shadowframe\"> \u003Cdiv class=\"dpmaxz_fbb_caption\"> \u003Cspan id=\"dpmaxz_cap\">{dpmaxs_txt_title}\u003C/span> \u003Cinput class=\"dpmaxz_fbb_btn dpmaxz_fbb_close\" type=\"button\" id=\"dpmaxs_c\" value=\"X\"/> \u003C/div> \u003Cdiv class=\"dpmaxz_fbb_mainbody dpmaxz_cf\"> \u003Cdiv class=\"dpmaxz_fbb_mainimg\"> \u003Cimg alt=\"{dpmaxs_txt_title}\" src=\"url(/images/bar-main.png)\"/> \u003C/div> \u003Cdiv class=\"dpmaxz_fbb_maintext\" id=\"dpmaxs_text\">{dpmaxs_txt_body}\u003C/div> \u003Cdiv class=\"dpmaxz_fbb_chk\"> \u003Clabel> \u003Cinput class=\"dpmaxz_fbb_btn\" type=\"checkbox\" id=\"dpmaxs_e\" value=\"On\"/>\u003Cspan>{dpmaxs_txt_ne}\u003C/span> \u003C/label> \u003C/div> \u003Cdiv class=\"dpmaxz_cf\"> \u003Cdiv class=\"dpmaxz_btn_wrap dpmaxz_float_right\"> \u003Cinput class=\"dpmaxz_fbb_btn dpmaxz_fbb_mbtn\" type=\"button\" id=\"dpmaxs_r\" value=\"{dpmaxs_txt_ok}\"/> \u003Cinput class=\"dpmaxz_fbb_btn dpmaxz_fbb_mbtn\" type=\"button\" id=\"dpmaxs_n\" value=\"{dpmaxs_txt_no}\"/> \u003C/div> \u003C/div> \u003C/div> \u003C/div> \u003Cdiv class=\"dpmaxz_fbb_shadow\">\u003C/div> \u003C/div>"
+   }
+}

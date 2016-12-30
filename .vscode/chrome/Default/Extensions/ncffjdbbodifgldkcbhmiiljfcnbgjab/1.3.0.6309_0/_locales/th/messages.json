@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"สามารถล็อกออนเข้าเว็บไซต์ได้อย่างสะดวกและปลอดภัย\",\"cmd_addlogin\":\"เพิ่มไว้ที่ Password Manager\",\"cmd_openpm\":\"เปิด Password Manager\",\"cmd_settings\":\"การตั้งค่าไอคอน\",\"cmd_help\":\"วิธีใช้\",\"cmd_fillin\":\"เติมข้อมูลการล็อกออน\",\"cmd_editprofile\":\"แก้ไขการล็อกออน\",\"cmd_addprofile\":\"เพิ่มการล็อกออน\",\"cmd_chgpsw\":\"เปลี่ยนรหัสผ่าน...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"คุณต้องการให้ Password Manager จำรหัสผ่านสำหรับ {account} บน {domain} หรือไม่?\",\"dpmaxs_txt_bodyupd\":\"คุณต้องการให้ Password Manager อัพเดตรหัสผ่านสำหรับ {account} บน {domain} หรือไม่?\",\"dpmaxs_txt_ok\":\"จำไว้\",\"dpmaxs_txt_no\":\"ไม่ต้อง ขอบคุณ\",\"dpmaxs_txt_ne\":\"ไม่เด็ดขาดสำหรับไซต์นี้\",\"dpmaxs_txt_popup_state\":\"ส่วนขยายของ HP Client Security Manager ทำงานไม่ถูกต้อง\",\"dpmaxs_txt_popup_infoActivate\":\"ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากไม่มีการเปิดใช้งานปลั๊กอินของ HP Client Security Manager\",\"dpmaxs_txt_popup_infoMultiple\":\"ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากมีการติดตั้งส่วนขยายของ HP Client Security Manager ไว้หลายเวอร์ชัน\",\"dpmaxs_txt_popup_infoWrongVer\":\"ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากเวอร์ชันส่วนขยายของ HP Client Security Manager ที่ติดตั้งไว้ไม่สามารถใช้งานร่วมกันกับปลั๊กอินของ HP Client Security Manager\",\"dpmaxs_txt_popup_actOpen\":\"เปิด HP Client Security Manager User Console Browser Integration Page เพื่อดูคำแนะนำเพิ่มเติม\",\"dpmaxs_txt_popup_actRemove\":\"สามารถเปิดใช้งานส่วนขยายของ HP Client Security Manager ได้เพียงเวอร์ชันเดียวเท่านั้น จะต้องปิดใช้งานหรือถอนการติดตั้งเวอร์ชันอื่นๆ\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "เพิ่มไว้ที่ Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "เพิ่มการล็อกออน"
+   },
+   "cmd_chgpsw": {
+      "message": "เปลี่ยนรหัสผ่าน..."
+   },
+   "cmd_editprofile": {
+      "message": "แก้ไขการล็อกออน"
+   },
+   "cmd_fillin": {
+      "message": "เติมข้อมูลการล็อกออน"
+   },
+   "cmd_help": {
+      "message": "วิธีใช้"
+   },
+   "cmd_openpm": {
+      "message": "เปิด Password Manager"
+   },
+   "cmd_settings": {
+      "message": "การตั้งค่าไอคอน"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "คุณต้องการให้ Password Manager จำรหัสผ่านสำหรับ {account} บน {domain} หรือไม่?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "คุณต้องการให้ Password Manager อัพเดตรหัสผ่านสำหรับ {account} บน {domain} หรือไม่?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "ไม่เด็ดขาดสำหรับไซต์นี้"
+   },
+   "dpmaxs_txt_no": {
+      "message": "ไม่ต้อง ขอบคุณ"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "จำไว้"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "เปิด HP Client Security Manager User Console Browser Integration Page เพื่อดูคำแนะนำเพิ่มเติม"
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "สามารถเปิดใช้งานส่วนขยายของ HP Client Security Manager ได้เพียงเวอร์ชันเดียวเท่านั้น จะต้องปิดใช้งานหรือถอนการติดตั้งเวอร์ชันอื่นๆ"
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากไม่มีการเปิดใช้งานปลั๊กอินของ HP Client Security Manager"
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากมีการติดตั้งส่วนขยายของ HP Client Security Manager ไว้หลายเวอร์ชัน"
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "ส่วนขยายของ HP Client Security Manager ไม่ทำงาน เนื่องจากเวอร์ชันส่วนขยายของ HP Client Security Manager ที่ติดตั้งไว้ไม่สามารถใช้งานร่วมกันกับปลั๊กอินของ HP Client Security Manager"
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "ส่วนขยายของ HP Client Security Manager ทำงานไม่ถูกต้อง"
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "สามารถล็อกออนเข้าเว็บไซต์ได้อย่างสะดวกและปลอดภัย"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

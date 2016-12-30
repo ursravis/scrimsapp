@@ -1,0 +1,1419 @@
+var ac_main =
+webpackJsonpac__name_([4],{
+
+/***/ 222:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var AppState = (function () {
+    function AppState() {
+        this._state = {};
+    }
+    Object.defineProperty(AppState.prototype, "state", {
+        // already return a clone of the current state
+        get: function () {
+            return this._state = this._clone(this._state);
+        },
+        // never allow mutation
+        set: function (value) {
+            throw new Error('do not mutate the `.state` directly');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppState.prototype.get = function (prop) {
+        // use our state getter for the clone
+        var state = this.state;
+        return state.hasOwnProperty(prop) ? state[prop] : state;
+    };
+    AppState.prototype.set = function (prop, value) {
+        // internally mutate our state
+        return this._state[prop] = value;
+    };
+    AppState.prototype._clone = function (object) {
+        // simple object clone
+        return JSON.parse(JSON.stringify(object));
+    };
+    AppState = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], AppState);
+    return AppState;
+}());
+exports.AppState = AppState;
+
+
+/***/ },
+
+/***/ 223:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(535));
+__export(__webpack_require__(536));
+
+
+/***/ },
+
+/***/ 347:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+// Angular 2
+// rc2 workaround
+var platform_browser_1 = __webpack_require__(84);
+var core_1 = __webpack_require__(0);
+// Environment Providers
+var PROVIDERS = [];
+// Angular debug tools in the dev console
+// https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md
+var _decorateModuleRef = function identity(value) { return value; };
+if (true) {
+    core_1.enableProdMode();
+    // Production
+    _decorateModuleRef = function (modRef) {
+        platform_browser_1.disableDebugTools();
+        return modRef;
+    };
+    PROVIDERS = PROVIDERS.slice();
+}
+else {
+    _decorateModuleRef = function (modRef) {
+        var appRef = modRef.injector.get(core_1.ApplicationRef);
+        var cmpRef = appRef.components[0];
+        var _ng = window.ng;
+        platform_browser_1.enableDebugTools(cmpRef);
+        window.ng.probe = _ng.probe;
+        window.ng.coreTokens = _ng.coreTokens;
+        return modRef;
+    };
+    // Development
+    PROVIDERS = PROVIDERS.slice();
+}
+exports.decorateModuleRef = _decorateModuleRef;
+exports.ENV_PROVIDERS = PROVIDERS.slice();
+
+
+/***/ },
+
+/***/ 348:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(527));
+
+
+/***/ },
+
+/***/ 349:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var http_1 = __webpack_require__(95);
+var core_1 = __webpack_require__(0);
+var ErrorLogService = (function () {
+    // I initialize the service.
+    function ErrorLogService(http) {
+        this.http = http;
+    }
+    // ---
+    // PUBLIC METHODS.
+    // ---
+    // I log the given error to various aggregation and tracking services.
+    ErrorLogService.prototype.logError = function (error) {
+        if (true) {
+            this.sendToServer(error);
+        }
+        else {
+            this.sendToConsole(error);
+        }
+    };
+    // ---
+    // PRIVATE METHODS.
+    // ---
+    // I send the error the browser console (safely, if it exists).
+    ErrorLogService.prototype.sendToConsole = function (error) {
+        if (console && console.group && console.error) {
+            console.group("Error Log Service");
+            //console.error( error );
+            console.error(error.message);
+            console.error(error.stack);
+            console.groupEnd();
+        }
+    };
+    // I send the error to the server-side error tracking end-point.
+    ErrorLogService.prototype.sendToServer = function (error) {
+        this.http
+            .post("./error-logging-endpoint", // Doesn't really exist in demo.
+        {
+            type: error.name,
+            message: error.message,
+            stack: error.stack,
+            location: window.location.href
+        })
+            .subscribe(function (httpResponse) {
+            // ... nothing to do here.
+        }, function (httpError) {
+            // NOTE: We know this will fail in the demo since there is no
+            // ability to accept POST requests on GitHub pages.
+            // --
+            // console.log( "Http error:", httpError );
+        });
+    };
+    ErrorLogService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], ErrorLogService);
+    return ErrorLogService;
+    var _a;
+}());
+exports.ErrorLogService = ErrorLogService;
+
+
+/***/ },
+
+/***/ 350:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(537));
+__export(__webpack_require__(538));
+
+
+/***/ },
+
+/***/ 351:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var Subject_1 = __webpack_require__(89);
+var NotificationsService = (function () {
+    function NotificationsService() {
+        this._notifications = new Subject_1.Subject();
+        this.noteAdded = this._notifications.asObservable();
+    }
+    NotificationsService.prototype.add = function (notification) {
+        this._notifications.next(notification);
+    };
+    NotificationsService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], NotificationsService);
+    return NotificationsService;
+}());
+exports.NotificationsService = NotificationsService;
+
+
+/***/ },
+
+/***/ 352:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+// Hot Module Replacement
+__export(__webpack_require__(546));
+//# sourceMappingURL=index.js.map
+
+/***/ },
+
+/***/ 416:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+/*
+ * Angular bootstraping
+ */
+var platform_browser_dynamic_1 = __webpack_require__(330);
+var environment_1 = __webpack_require__(347);
+var hmr_1 = __webpack_require__(352);
+/*
+ * App Module
+ * our top level module that holds all of our components
+ */
+var app_1 = __webpack_require__(532);
+/*
+ * Bootstrap our Angular app with a top level NgModule
+ */
+function main() {
+    return platform_browser_dynamic_1.platformBrowserDynamic()
+        .bootstrapModule(app_1.AppModule)
+        .then(environment_1.decorateModuleRef)
+        .catch(function (err) { return console.error(err); });
+}
+exports.main = main;
+// needed for hmr
+// in prod this is replace for document ready
+(document.readyState === "complete") ? main() : document.addEventListener("DOMContentLoaded", function() { main() });
+
+
+/***/ },
+
+/***/ 419:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(540));
+__export(__webpack_require__(351));
+__export(__webpack_require__(539));
+
+
+/***/ },
+
+/***/ 44:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(545));
+__export(__webpack_require__(542));
+__export(__webpack_require__(541));
+__export(__webpack_require__(543));
+__export(__webpack_require__(544));
+
+
+/***/ },
+
+/***/ 521:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(66);
+var AboutComponent = (function () {
+    function AboutComponent(route) {
+        this.route = route;
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route
+            .data
+            .subscribe(function (data) {
+            // your resolved data from route
+            _this.localState = data.yourData;
+        });
+        console.log('hello `About` component');
+        // static data that is bundled
+        // var mockData = require('assets/mock-data/mock-data.json');
+        // console.log('mockData', mockData);
+        // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
+        this.asyncDataWithWebpack();
+    };
+    AboutComponent.prototype.asyncDataWithWebpack = function () {
+        var _this = this;
+        // you can also async load mock data with 'es6-promise-loader'
+        // you would do this if you don't want the mock-data bundled
+        // remember that 'es6-promise-loader' is a promise
+        setTimeout(function () {
+            __webpack_require__.e/* System.import */(2).then(__webpack_require__.bind(null, 813))
+                .then(function (json) {
+                console.log('async mockData', json);
+                _this.localState = json;
+            });
+        });
+    };
+    AboutComponent = __decorate([
+        core_1.Component({
+            selector: 'about',
+            styles: ["\n  "],
+            template: "\n    <h1>About</h1>\n    <div>\n      For hot module reloading run\n      <pre>npm run start:hmr</pre>\n    </div> \n    <pre>this.localState = {{ localState | json }}</pre>\n  "
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object])
+    ], AboutComponent);
+    return AboutComponent;
+    var _a;
+}());
+exports.AboutComponent = AboutComponent;
+
+
+/***/ },
+
+/***/ 522:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(521));
+
+
+/***/ },
+
+/***/ 523:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+/*
+ * Angular 2 decorators and services
+ */
+var core_1 = __webpack_require__(0);
+var app_service_1 = __webpack_require__(222);
+var index_1 = __webpack_require__(44);
+/*
+ * App Component
+ * Top Level Component
+ */
+var AppComponent = (function () {
+    function AppComponent(appState, userService) {
+        this.appState = appState;
+        this.userService = userService;
+        this.angularclassLogo = 'assets/img/angularclass-avatar.png';
+        this.name = 'Angular 2 Webpack Starter';
+        this.url = 'https://twitter.com/AngularClass';
+        this.userService.tokenExpired.subscribe(function (user) {
+            //document.getElementById("logoutModalButton").click();
+        });
+    }
+    AppComponent.prototype.ngOnInit = function () {
+        console.log('Initial App State', this.appState.state);
+    };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'app',
+            encapsulation: core_1.ViewEncapsulation.None,
+            styles: [
+                __webpack_require__(787)
+            ],
+            template: __webpack_require__(736)
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof app_service_1.AppState !== 'undefined' && app_service_1.AppState) === 'function' && _a) || Object, (typeof (_b = typeof index_1.UserService !== 'undefined' && index_1.UserService) === 'function' && _b) || Object])
+    ], AppComponent);
+    return AppComponent;
+    var _a, _b;
+}());
+exports.AppComponent = AppComponent;
+
+
+/***/ },
+
+/***/ 524:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var platform_browser_1 = __webpack_require__(84);
+var forms_1 = __webpack_require__(164);
+var http_1 = __webpack_require__(95);
+var router_1 = __webpack_require__(66);
+/*
+ * Platform and Environment providers/directives/pipes
+ */
+var environment_1 = __webpack_require__(347);
+var app_routes_1 = __webpack_require__(526);
+// App is our top level component
+var app_component_1 = __webpack_require__(523);
+var app_resolver_1 = __webpack_require__(525);
+var app_service_1 = __webpack_require__(222);
+var home_1 = __webpack_require__(348);
+var about_1 = __webpack_require__(522);
+var no_content_1 = __webpack_require__(350);
+var x_large_1 = __webpack_require__(530);
+var index_1 = __webpack_require__(44);
+var index_2 = __webpack_require__(223);
+var index_3 = __webpack_require__(419);
+var index_4 = __webpack_require__(534);
+// Application wide providers
+var APP_PROVIDERS = app_resolver_1.APP_RESOLVER_PROVIDERS.concat([
+    app_service_1.AppState,
+    index_3.NotificationsService,
+    index_4.ErrorLogService,
+    index_4.LOGGING_ERROR_HANDLER_PROVIDERS,
+    {
+        provide: index_4.LOGGING_ERROR_HANDLER_OPTIONS,
+        useValue: {
+            rethrowError: false,
+            unwrapError: false
+        }
+    }
+]);
+/**
+ * `AppModule` is the main entry point into Angular2's bootstraping process
+ */
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        core_1.NgModule({
+            bootstrap: [app_component_1.AppComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                about_1.AboutComponent,
+                home_1.HomeComponent,
+                no_content_1.NoContentComponent,
+                no_content_1.UnAuthorizeComponent,
+                index_3.NotificationComponent,
+                x_large_1.XLarge,
+            ],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                index_2.LoginModule,
+                router_1.RouterModule.forRoot(app_routes_1.ROUTES, {}),
+                index_1.SharedModule.forRoot()
+            ],
+            providers: [
+                environment_1.ENV_PROVIDERS,
+                APP_PROVIDERS
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
+    return AppModule;
+}());
+exports.AppModule = AppModule;
+
+
+/***/ },
+
+/***/ 525:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var Observable_1 = __webpack_require__(12);
+__webpack_require__(744);
+var DataResolver = (function () {
+    function DataResolver() {
+    }
+    DataResolver.prototype.resolve = function (route, state) {
+        return Observable_1.Observable.of({ res: 'I am data' });
+    };
+    DataResolver = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], DataResolver);
+    return DataResolver;
+}());
+exports.DataResolver = DataResolver;
+// an array of services to resolve routes with data
+exports.APP_RESOLVER_PROVIDERS = [
+    DataResolver
+];
+
+
+/***/ },
+
+/***/ 526:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var home_1 = __webpack_require__(348);
+var no_content_1 = __webpack_require__(350);
+var index_1 = __webpack_require__(44);
+var index_2 = __webpack_require__(223);
+exports.ROUTES = [
+    { path: '', component: home_1.HomeComponent, canActivate: [index_1.LoggedInGuard] },
+    { path: 'login', component: index_2.LoginComponent },
+    { path: 'projects', loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(0).then((function (require) { resolve(__webpack_require__(812)['ProjectModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }, canLoad: [index_1.LoggedInGuard] },
+    { path: 'todolist', loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(1).then((function (require) { resolve(__webpack_require__(811)['TodolistModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }, canLoad: [index_1.AdminGuard] },
+    // {
+    //   path: 'detail', loadChildren: () => System.import('./+detail')
+    //     .then((comp: any) => comp.default)
+    //     , canActivate: [LoggedInGuard]
+    // },
+    { path: '401', component: no_content_1.UnAuthorizeComponent },
+    { path: '**', component: no_content_1.NoContentComponent },
+];
+
+
+/***/ },
+
+/***/ 527:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var app_service_1 = __webpack_require__(222);
+var title_1 = __webpack_require__(528);
+var HomeComponent = (function () {
+    // TypeScript public modifiers
+    function HomeComponent(appState, title) {
+        this.appState = appState;
+        this.title = title;
+        // Set our default values
+        this.localState = { value: '' };
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        console.log('hello `Home` component');
+        // this.title.getData().subscribe(data => this.data = data);
+    };
+    HomeComponent.prototype.submitState = function (value) {
+        console.log('submitState', value);
+        this.appState.set('value', value);
+        this.localState.value = '';
+    };
+    HomeComponent = __decorate([
+        core_1.Component({
+            // The selector is what angular internally uses
+            // for `document.querySelectorAll(selector)` in our index.html
+            // where, in this case, selector is the string 'home'
+            selector: 'home',
+            // We need to tell Angular's Dependency Injection which providers are in our app.
+            providers: [
+                title_1.Title
+            ],
+            // Our list of styles in our component. We may add more to compose many styles together
+            styles: [__webpack_require__(788)],
+            // Every Angular template is first compiled by the browser before Angular runs it's compiler
+            template: __webpack_require__(737)
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof app_service_1.AppState !== 'undefined' && app_service_1.AppState) === 'function' && _a) || Object, (typeof (_b = typeof title_1.Title !== 'undefined' && title_1.Title) === 'function' && _b) || Object])
+    ], HomeComponent);
+    return HomeComponent;
+    var _a, _b;
+}());
+exports.HomeComponent = HomeComponent;
+
+
+/***/ },
+
+/***/ 528:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(529));
+
+
+/***/ },
+
+/***/ 529:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(95);
+var Title = (function () {
+    function Title(http) {
+        this.http = http;
+        this.value = 'Angular 2';
+    }
+    Title.prototype.getData = function () {
+        console.log('Title#getData(): Get Data');
+        // return this.http.get('/assets/data.json')
+        // .map(res => res.json());
+        return {
+            value: 'AngularClass'
+        };
+    };
+    Title = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], Title);
+    return Title;
+    var _a;
+}());
+exports.Title = Title;
+
+
+/***/ },
+
+/***/ 530:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(531));
+
+
+/***/ },
+
+/***/ 531:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+/*
+ * Directive
+ * XLarge is a simple directive to show how one is made
+ */
+var XLarge = (function () {
+    function XLarge(element, renderer) {
+        // simple DOM manipulation to set font size to x-large
+        // `nativeElement` is the direct reference to the DOM element
+        // element.nativeElement.style.fontSize = 'x-large';
+        // for server/webworker support use the renderer
+        renderer.setElementStyle(element.nativeElement, 'fontSize', 'x-large');
+    }
+    XLarge = __decorate([
+        core_1.Directive({
+            selector: '[x-large]' // using [ ] means selecting attributes
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object, (typeof (_b = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _b) || Object])
+    ], XLarge);
+    return XLarge;
+    var _a, _b;
+}());
+exports.XLarge = XLarge;
+
+
+/***/ },
+
+/***/ 532:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+// App
+__export(__webpack_require__(524));
+
+
+/***/ },
+
+/***/ 533:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+// Import the core angular services.
+var core_1 = __webpack_require__(0);
+var core_2 = __webpack_require__(0);
+var core_3 = __webpack_require__(0);
+// Import the application components and services.
+var error_log_service_1 = __webpack_require__(349);
+exports.LOGGING_ERROR_HANDLER_OPTIONS = {
+    rethrowError: false,
+    unwrapError: false
+};
+var LoggingErrorHandler = (function () {
+    // I initialize the service.
+    // --
+    // CAUTION: The core implementation of the ErrorHandler class accepts a boolean
+    // parameter, `rethrowError`; however, this is not part of the interface for the
+    // class. In our version, we are supporting that same concept; but, we are doing it
+    // through an Options object (which is being defaulted in the providers).
+    function LoggingErrorHandler(errorLogService, options) {
+        this.errorLogService = errorLogService;
+        this.options = options;
+    }
+    // ---
+    // PUBLIC METHODS.
+    // ---
+    // I handle the given error.
+    LoggingErrorHandler.prototype.handleError = function (error) {
+        // Send to the error-logging service.
+        try {
+            this.options.unwrapError
+                ? this.errorLogService.logError(this.findOriginalError(error))
+                : this.errorLogService.logError(error);
+        }
+        catch (loggingError) {
+            console.group("ErrorHandler");
+            console.warn("Error when trying to log error to", this.errorLogService);
+            console.error(loggingError);
+            console.groupEnd();
+        }
+        if (this.options.rethrowError) {
+            throw (error);
+        }
+    };
+    // ---
+    // PRIVATE METHODS.
+    // ---
+    // I attempt to find the underlying error in the given Wrapped error.
+    LoggingErrorHandler.prototype.findOriginalError = function (error) {
+        while (error && error.originalError) {
+            error = error.originalError;
+        }
+        return (error);
+    };
+    LoggingErrorHandler = __decorate([
+        core_3.Injectable(),
+        __param(1, core_2.Inject(exports.LOGGING_ERROR_HANDLER_OPTIONS)), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof error_log_service_1.ErrorLogService !== 'undefined' && error_log_service_1.ErrorLogService) === 'function' && _a) || Object, Object])
+    ], LoggingErrorHandler);
+    return LoggingErrorHandler;
+    var _a;
+}());
+exports.LoggingErrorHandler = LoggingErrorHandler;
+// I am the collection of providers used for this service at the module level.
+// Notice that we are overriding the CORE ErrorHandler with our own class definition.
+// --
+// CAUTION: These are at the BOTTOM of the file so that we don't have to worry about
+// creating futureRef() and hoisting behavior.
+exports.LOGGING_ERROR_HANDLER_PROVIDERS = [
+    {
+        provide: exports.LOGGING_ERROR_HANDLER_OPTIONS,
+        useValue: exports.LOGGING_ERROR_HANDLER_OPTIONS
+    },
+    {
+        provide: core_1.ErrorHandler,
+        useClass: LoggingErrorHandler
+    }
+];
+
+
+/***/ },
+
+/***/ 534:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(533));
+__export(__webpack_require__(349));
+
+
+/***/ },
+
+/***/ 535:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(66);
+var index_1 = __webpack_require__(44);
+var LoginComponent = (function () {
+    function LoginComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
+        this.user = new index_1.User();
+        this.user.userName = "Admin";
+        this.user.password = "Admin";
+    }
+    LoginComponent.prototype.onSubmit = function () {
+        // this.userService.login(email, password).subscribe((result) => {
+        //   if (result) {
+        //     this.router.navigate(['']);
+        //   }
+        // });
+        var result = this.userService.login(this.user.userName, this.user.password);
+        if (result != null) {
+            this.router.navigate([result]);
+        }
+    };
+    LoginComponent = __decorate([
+        core_1.Component({
+            template: __webpack_require__(738)
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof index_1.UserService !== 'undefined' && index_1.UserService) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
+    ], LoginComponent);
+    return LoginComponent;
+    var _a, _b;
+}());
+exports.LoginComponent = LoginComponent;
+
+
+/***/ },
+
+/***/ 536:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var index_1 = __webpack_require__(44);
+var index_2 = __webpack_require__(223);
+var forms_1 = __webpack_require__(164);
+var common_1 = __webpack_require__(80);
+var LoginModule = (function () {
+    function LoginModule() {
+    }
+    LoginModule = __decorate([
+        core_1.NgModule({
+            declarations: [index_2.LoginComponent],
+            imports: [index_1.SharedModule,
+                common_1.CommonModule,
+                forms_1.FormsModule,],
+            exports: [index_2.LoginComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], LoginModule);
+    return LoginModule;
+}());
+exports.LoginModule = LoginModule;
+
+
+/***/ },
+
+/***/ 537:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var NoContentComponent = (function () {
+    function NoContentComponent() {
+    }
+    NoContentComponent = __decorate([
+        core_1.Component({
+            selector: 'no-content',
+            template: "\n    <div>\n      <h1>404: page missing</h1>\n    </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], NoContentComponent);
+    return NoContentComponent;
+}());
+exports.NoContentComponent = NoContentComponent;
+
+
+/***/ },
+
+/***/ 538:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var UnAuthorizeComponent = (function () {
+    function UnAuthorizeComponent() {
+    }
+    UnAuthorizeComponent = __decorate([
+        core_1.Component({
+            selector: 'no-content',
+            template: "\n    <div>\n      <h1>401: You are unauthorized.</h1>\n    </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], UnAuthorizeComponent);
+    return UnAuthorizeComponent;
+}());
+exports.UnAuthorizeComponent = UnAuthorizeComponent;
+
+
+/***/ },
+
+/***/ 539:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var notifications_service_1 = __webpack_require__(351);
+var NotificationComponent = (function () {
+    function NotificationComponent(_notifications) {
+        var _this = this;
+        this._notifications = _notifications;
+        this._notes = new Array();
+        _notifications.noteAdded.subscribe(function (note) {
+            _this._notes.push(note);
+            setTimeout(function () { _this.hide.bind(_this)(note); }, 3000);
+        });
+    }
+    NotificationComponent.prototype.hide = function (note) {
+        var index = this._notes.indexOf(note);
+        if (index >= 0) {
+            this._notes.splice(index, 1);
+        }
+    };
+    NotificationComponent = __decorate([
+        core_1.Component({
+            selector: 'notifications',
+            template: "\n    <div class=\"notifications\">\n        <div (click)=\"hide(note)\" class=\"{{ note.type }}\"\n                *ngFor=\"let note of _notes\">\n            {{ note.message }}\n        </div>\n    </div>\n    ",
+            styles: [__webpack_require__(789)]
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof notifications_service_1.NotificationsService !== 'undefined' && notifications_service_1.NotificationsService) === 'function' && _a) || Object])
+    ], NotificationComponent);
+    return NotificationComponent;
+    var _a;
+}());
+exports.NotificationComponent = NotificationComponent;
+
+
+/***/ },
+
+/***/ 540:
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+var Notification = (function () {
+    function Notification(type, message) {
+        if (type === void 0) { type = ''; }
+        if (message === void 0) { message = ''; }
+        this.type = type;
+        this.message = message;
+    }
+    return Notification;
+}());
+exports.Notification = Notification;
+
+
+/***/ },
+
+/***/ 541:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(66);
+var index_1 = __webpack_require__(44);
+var AdminGuard = (function () {
+    function AdminGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    // canActivate() {
+    //   return this.user.isLoggedIn();
+    // }
+    AdminGuard.prototype.canActivate = function (route, state) {
+        if (state.url !== '/login' && !this.userService.isLoggedIn()) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        else if (!this.userService.isAdmin()) {
+            this.router.navigate(['/401']);
+            return false;
+        }
+        return true;
+    };
+    AdminGuard.prototype.canLoad = function (route) {
+        var url = route.path;
+        this.userService.redirectURL = url;
+        if (!this.userService.isLoggedIn()) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        else if (!this.userService.isAdmin()) {
+            this.router.navigate(['/401']);
+            return false;
+        }
+        return true;
+    };
+    AdminGuard = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof index_1.UserService !== 'undefined' && index_1.UserService) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
+    ], AdminGuard);
+    return AdminGuard;
+    var _a, _b;
+}());
+exports.AdminGuard = AdminGuard;
+
+
+/***/ },
+
+/***/ 542:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(66);
+var index_1 = __webpack_require__(44);
+var LoggedInGuard = (function () {
+    function LoggedInGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    // canActivate() {
+    //   return this.user.isLoggedIn();
+    // }
+    LoggedInGuard.prototype.canActivate = function (route, state) {
+        if (state.url !== '/login' && !this.userService.isLoggedIn()) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        return true;
+    };
+    LoggedInGuard.prototype.canLoad = function (route) {
+        var url = route.path;
+        this.userService.redirectURL = url;
+        if (!this.userService.isLoggedIn()) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        return true;
+    };
+    LoggedInGuard = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof index_1.UserService !== 'undefined' && index_1.UserService) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
+    ], LoggedInGuard);
+    return LoggedInGuard;
+    var _a, _b;
+}());
+exports.LoggedInGuard = LoggedInGuard;
+
+
+/***/ },
+
+/***/ 543:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var index_1 = __webpack_require__(44);
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    SharedModule.forRoot = function () {
+        return {
+            ngModule: SharedModule,
+            providers: [index_1.UserService, index_1.LoggedInGuard, index_1.AdminGuard]
+        };
+    };
+    SharedModule = __decorate([
+        core_1.NgModule({}), 
+        __metadata('design:paramtypes', [])
+    ], SharedModule);
+    return SharedModule;
+}());
+exports.SharedModule = SharedModule;
+
+
+/***/ },
+
+/***/ 544:
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+var User = (function () {
+    function User() {
+    }
+    return User;
+}());
+exports.User = User;
+
+
+/***/ },
+
+/***/ 545:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(95);
+var index_1 = __webpack_require__(44);
+var router_1 = __webpack_require__(66);
+var Subject_1 = __webpack_require__(89);
+var UserService = (function () {
+    function UserService(http, router) {
+        this.http = http;
+        this.router = router;
+        this.loggedIn = false;
+        this.authTimeOut = new Subject_1.Subject();
+        this.tokenExpired = this.authTimeOut.asObservable();
+        //this.loggedIn = false;
+        this.redirectURL = '';
+        this.loggedIn = !!localStorage.getItem('auth_token');
+        this.loggedInUser = JSON.parse(localStorage.getItem('profile'));
+    }
+    UserService.prototype.login = function (userName, password) {
+        // let headers = new Headers();
+        // headers.append('Content-Type', 'application/json');
+        // return this.http
+        //   .post(
+        //     '/login', 
+        //     JSON.stringify({ email, password }), 
+        //     { headers }
+        //   )
+        //   .map(res => res.json())
+        //   .map((res) => {
+        //     if (res.success) {
+        //       localStorage.setItem('auth_token', res.auth_token);
+        //       this.loggedIn = true;
+        //     }
+        //     return res.success;
+        //   });
+        if (userName.toLowerCase() == password.toLowerCase()) {
+            this.loggedIn = true;
+            this.loggedInUser = new index_1.User();
+            this.loggedInUser.firstName = "John";
+            this.loggedInUser.lastName = "Doe";
+            this.loggedInUser.role = userName;
+            localStorage.setItem('profile', JSON.stringify(this.loggedInUser));
+            localStorage.setItem('auth_token', 'testtoken');
+            this.checkTokenExpired();
+            return this.redirectURL;
+        }
+        else
+            return null;
+    };
+    UserService.prototype.checkTokenExpired = function () {
+        var _this = this;
+        //send dummy timeout after 20 secs
+        setTimeout(function () { _this.authTimeOut.next(_this.loggedInUser); }, 20000);
+    };
+    UserService.prototype.getAuthTokenHeader = function () {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        var authToken = localStorage.getItem('auth_token');
+        headers.append('Authorization', "Bearer " + authToken);
+        return headers;
+    };
+    UserService.prototype.logout = function () {
+        localStorage.removeItem('auth_token');
+        localStorage.removeItem('profile');
+        this.loggedIn = false;
+        this.router.navigate(['/']);
+        window.location.reload(false);
+    };
+    UserService.prototype.isLoggedIn = function () {
+        return this.loggedIn;
+    };
+    UserService.prototype.isAdmin = function () {
+        return this.loggedInUser != null && this.loggedInUser.role.toLowerCase() == "Admin".toLowerCase();
+    };
+    UserService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
+    ], UserService);
+    return UserService;
+    var _a, _b;
+}());
+exports.UserService = UserService;
+
+
+/***/ },
+
+/***/ 546:
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+// Hot Module Replacement
+function bootloader(main) {
+    if (document.readyState === 'complete') {
+        main();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', main);
+    }
+}
+exports.bootloader = bootloader;
+// create new elements
+function createNewHosts(cmps) {
+    var components = cmps.map(function (componentNode) {
+        var newNode = document.createElement(componentNode.tagName);
+        // display none
+        var currentDisplay = newNode.style.display;
+        newNode.style.display = 'none';
+        var parentNode = componentNode.parentNode;
+        parentNode.insertBefore(newNode, componentNode);
+        return { currentDisplay: currentDisplay, newNode: newNode };
+    });
+    return function () {
+        components.forEach(function (cmp) {
+            cmp.newNode.style.display = cmp.currentDisplay;
+            cmp.newNode = null;
+            cmp.currentDisplay = null;
+        });
+    };
+}
+exports.createNewHosts = createNewHosts;
+// remove old styles
+function removeNgStyles() {
+    Array.prototype.slice.call(document.head.querySelectorAll('style'), 0)
+        .filter(function (style) { return style.innerText.indexOf('_ng') !== -1; })
+        .map(function (el) { return el.remove(); });
+}
+exports.removeNgStyles = removeNgStyles;
+// get input values
+function getInputValues() {
+    var inputs = document.querySelectorAll('input');
+    return Array.prototype.slice.call(inputs).map(function (input) { return input.value; });
+}
+exports.getInputValues = getInputValues;
+// set input values
+function setInputValues($inputs) {
+    var inputs = document.querySelectorAll('input');
+    if ($inputs && inputs.length === $inputs.length) {
+        $inputs.forEach(function (value, i) {
+            var el = inputs[i];
+            el.value = value;
+            el.dispatchEvent(new CustomEvent('input', { detail: el.value }));
+        });
+    }
+}
+exports.setInputValues = setInputValues;
+// get/set input values
+function createInputTransfer() {
+    var $inputs = getInputValues();
+    return function restoreInputValues() {
+        setInputValues($inputs);
+    };
+}
+exports.createInputTransfer = createInputTransfer;
+//# sourceMappingURL=helpers.js.map
+
+/***/ },
+
+/***/ 725:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(94)();
+// imports
+
+
+// module
+exports.push([module.i, "html, body{\n  height: 100%;\n  font-family: Arial, Helvetica, sans-serif\n}\n\nspan.active {\n  background-color: gray;\n}\n.panel-title {\n\tfont-weight: bold;\n\tcolor: color(primary);\n}\n\nli {\n    font-size: large;\n}\n\ndiv.panel-heading {\n   font-size: x-large; \n}\n/*img {\n  max-width: 100%; \n}*/\n#listofImages{\n background-color:white;\n\n  display: inline-block;\n  list-style-type: none;\n  margin: 5px;\n   /*border: 1px solid #ccc;*/\n}\n\n\n#listofImages li{\n width: 300px;\n height: 270px;\n float: left;\n margin: 2px;\n  border-color: black;\n border: 1px solid black;\n text-align: center;\n}\n.listImage {\n  vertical-align: top;\n  max-height: 100%;\n  max-width: 100%;\n   width: 300px;\n height: 200px;\n \n\n}\n.image {\n  max-height: 100%;\n  max-width: 100%;\n\n \n\n}\n.thumbImage {\n  margin-top: 5px;\n  vertical-align: top;\n text-align: right;\n\n \n\n}\n\n\n.modal.modal-wide .modal-dialog {\n  width: 80%;\n}\n.modal-wide .modal-body {\n  overflow-y: auto;\n}\n.center-fix {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center;\n}\n\n.main-spinner {\n    font-size: 3em;\n    color: color(primary);\n}\n.navbar-right\n { margin-right: 0px !important}\n\n ", ""]);
+
+// exports
+
+
+/***/ },
+
+/***/ 726:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(94)();
+// imports
+
+
+// module
+exports.push([module.i, "/*styles for home content only*/", ""]);
+
+// exports
+
+
+/***/ },
+
+/***/ 727:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(94)();
+// imports
+
+
+// module
+exports.push([module.i, ".notifications {\r\n  right: 10px;\r\n  position: absolute;\r\n  top: 10%;\r\n}\r\n.notifications div {\r\n  border: 1px solid;\r\n  border-radius: 4px;\r\n  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.22), 0 17px 20px 0 rgba(0, 0, 0, 0.12);\r\n  cursor: pointer;\r\n  margin-bottom: .5em;\r\n  min-height: 3em;\r\n  padding: 1em;\r\n  text-align: center;\r\n  width: 300px;\r\n}\r\n.notifications div.success {\r\n  background-color: #dff2bf;\r\n  border-color: #9fd840;\r\n  color: #4a6a15;\r\n}\r\n.notifications div.error {\r\n  background-color: #ffbaba;\r\n  border-color: #ff8787;\r\n  color: #870000;\r\n}\r\n.notifications div.warn {\r\n  background-color: #feefb3;\r\n  border-color: #fccf1c;\r\n  color: #8c7102;\r\n}\r\n.notifications div.info {\r\n  background-color: #bde5f8;\r\n  border-color: #33afe9;\r\n  color: #1175a5;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ },
+
+/***/ 736:
+/***/ function(module, exports) {
+
+module.exports = "\r\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" [routerLink]=\"['/']\">Smart Album</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">          \r\n         <li><a [routerLink]=\"['/projects']\">Project</a></li>\r\n        <li><a [routerLink]=\"['./todolist']\" *ngIf=\"userService.isAdmin()\" >Todolist</a></li>  \r\n         <!--<li><a [routerLink]=\"['./login']\">Login</a></li>-->\r\n\r\n      </ul>\r\n         <ul class=\"nav navbar-nav navbar-right\">\r\n       \r\n           <li><a [routerLink]=\"['./login']\" *ngIf=\"userService.isLoggedIn()\">Login</a></li>\r\n         \r\n          <li> <a (click)=userService.logout() *ngIf=\"userService.isLoggedIn()\">Log Out</a>          </li>\r\n        </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n\r\n<div class=\"container\" style=\"margin-top: 100px;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <notifications></notifications>\r\n  \t<button type=\"button\" id=\"logoutModalButton\" [hidden]=\"true\" data-toggle=\"modal\" data-target=\"#logoutModel\">Open Modal</button>\r\n\t\t\t<div id=\"logoutModel\" class=\"modal modal-wide fade\" role=\"dialog\">\r\n\t\t\t\t<div class=\"modal-dialog  modal-lg\">\r\n\t\t\t\t\t<div class=\"modal-content\">\r\n\t\t\t\t\t\t<div class=\"modal-header\">\r\n\t\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n\t\t\t\t\t\t\t<h4 class=\"modal-title\">Session Expired</h4>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"modal-body\">\r\n\t\t\t\t\t\t\t<div >\r\n\t\t\t\t\tLogged in User\tSession Expired, Please relogin? \r\n          <br/>\r\n          \t<button type=\"button\" class=\"btn btn-default\" >Yes</button>\r\n            <button type=\"button\" class=\"btn btn-default\" >No</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"modal-footer\">\r\n\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n   "
+
+/***/ },
+
+/***/ 737:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"card-container\">\n  <h1 x-large class=\"sample-content\">Hello From Home</h1>\n\n\n\n  <!--<hr>\n\n  <div>\n    For hot module reloading run\n    <pre>npm run start:hmr</pre>\n  </div>\n\n  <hr>\n\n  <div>\n    <h4>Local State</h4>\n\n    <form (ngSubmit)=\"submitState(localState.value)\" autocomplete=\"off\">\n\n      <input\n        [value]=\"localState.value\"\n        (input)=\"localState.value = $event.target.value\"\n        placeholder=\"Submit Local State to App State\"\n        autofocus>\n\n      <button md-raised-button color=\"primary\">Submit Value</button>\n    </form>\n\n        <input type=\"text\" [value]=\"localState.value\" (input)=\"localState.value = $event.target.value\" autofocus>\n        Rather than wiring up two-way data-binding ourselves with [value] and (input)\n        we can use Angular's [(ngModel)] syntax\n        <input type=\"text\" name=\"textInput\" [(ngModel)]=\"localState.value\" autofocus>\n     \n\n    <pre>this.localState = {{ localState | json }}</pre>\n\n  </div>\n\n</div>-->\n"
+
+/***/ },
+
+/***/ 738:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"login jumbotron center-block\">\r\n  <h1>Login</h1>\r\n \r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.userName\"  class=\"form-control\" name=\"username\" placeholder=\"Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"password\">Password</label>\r\n    <input type=\"password\"  [(ngModel)]=\"user.password\"  class=\"form-control\" name=\"password\" placeholder=\"Password\">\r\n  </div>\r\n  <button class=\"btn btn-default\" (click)=\"onSubmit()\" >Submit</button>\r\n<label>Enter same username and password </label>\r\n</div>"
+
+/***/ },
+
+/***/ 744:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var Observable_1 = __webpack_require__(12);
+var of_1 = __webpack_require__(79);
+Observable_1.Observable.of = of_1.of;
+//# sourceMappingURL=of.js.map
+
+/***/ },
+
+/***/ 787:
+/***/ function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(725);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ },
+
+/***/ 788:
+/***/ function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(726);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ },
+
+/***/ 789:
+/***/ function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(727);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ },
+
+/***/ 808:
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(93);
+module.exports = __webpack_require__(416);
+
+
+/***/ }
+
+},[808]);
+//# sourceMappingURL=main.map

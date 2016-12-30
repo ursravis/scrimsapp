@@ -1,0 +1,190 @@
+<!--<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+          <button class="btn btn-default pull-right" [routerLink]="['/project', -1]" *ngIf="userService.isAdmin()" >New</button>
+    </div>
+
+
+    <div class='panel-body'>
+
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        <div *ngIf="!(projects && projects.length)">
+            <i class="center-fix main-spinner fa fa-spin fa-spinner" ></i>
+            </div>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='projects && projects.length'>
+                <thead>
+                    <tr>
+                       
+                        <th>Project</th>
+                        <th>Created By</th>
+                        <th>No Of Images</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let project of projects '>
+                      
+                        <td> <a [routerLink]="['/projects', project.projectId]">
+                            {{project.projectName}}
+                            </a>
+                        </td>
+                        <td>{{ project.createdBy }}</td>
+                        <td>{{ project.noOfImages }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>-->
+
+
+<div class="title-search-block">
+
+	<div class="title-block">
+		<div class="row">
+
+			<div class="col-md-6">
+				<h3 class="title">
+					My Projects
+					<a href="item-editor.html" class="btn btn-primary btn-sm rounded-s">
+						Show All Projects
+					</a>
+				</h3>
+			
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+
+<div class="card items">
+	<ul class="item-list striped">
+		<li class="item item-list-header hidden-sm-down">
+			<div class="item-row">
+			
+				<div class="item-col item-col-header item-col-title">
+					<div>
+						<span>Name</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-sales">
+					<div>
+						<span>Total Items</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-stats">
+					<div class="no-overflow">
+						<span>Status</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-category">
+					<div class="no-overflow">
+						<span>Review Queue</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-author">
+					<div class="no-overflow">
+						<span></span>
+					</div>
+				</div>
+			
+			</div>
+		</li>
+		
+			<li class="item" *ngFor='let project of projects '>	
+
+				<div class="item-row">
+
+				
+					<div class="item-col fixed pull-left item-col-title">
+						<div class="item-heading">Name</div>
+						<div>
+							<a [routerLink]="['/projects', project.projectId]" class="">
+								<h4 class="item-title">
+									{{project.projectName}}
+								</h4>
+							</a>
+						</div>
+					</div>
+					<div class="item-col item-col-sales">
+						<div class="item-heading">Total Items</div>
+						<div>
+							{{project.totalCICount}}
+						</div>
+					</div>
+					<div class="item-col item-col-stats no-overflow">
+						<div class="item-heading">Status</div>
+						<div class="no-overflow">
+							<div class="item-stats sparkline" data-type="bar"></div>	
+						</div>
+					</div>
+					<div class="item-col item-col-category no-overflow">
+						<div class="item-heading">ReviewQueue</div>
+						<div class="no-overflow">
+							<a href="">{{project.reviewQueueCount}}</a>
+						</div>
+					</div>
+					<div class="item-col item-col-author">
+						<div class="item-heading"></div>
+						<div class="no-overflow">
+							
+                                <a href="" class="btn btn-primary btn-sm rounded pull-right">
+                                Add CI
+                                </a>
+                           
+						</div>
+					</div>
+				
+				
+
+				</div>
+			</li>
+	
+	</ul>
+</div>
+
+<nav class="text-xs-right">
+	<ul class="pagination">
+		<li class="page-item">
+			<a class="page-link" href="">
+				Prev
+			</a>
+		</li>
+		<li class="page-item active">
+			<a class="page-link" href="">
+				1
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
+				2
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
+				3
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
+				4
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
+				5
+			</a>
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
+				Next
+			</a>
+		</li>
+	</ul>
+</nav>

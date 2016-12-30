@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"提供安全又方便的網站登入\",\"cmd_addlogin\":\"新增  至 Password Manager\",\"cmd_openpm\":\"開啟 Password Manager\",\"cmd_settings\":\"圖示設定\",\"cmd_help\":\"說明\",\"cmd_fillin\":\"填入登入資料\",\"cmd_editprofile\":\"編輯登入\",\"cmd_addprofile\":\"新增登入\",\"cmd_chgpsw\":\"變更密碼...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"您是否想要 Password Manager 記憶{account}密碼於{domain}？\",\"dpmaxs_txt_bodyupd\":\"您是否想要 Password Manager 更新{account}密碼於{domain}？\",\"dpmaxs_txt_ok\":\"記憶\",\"dpmaxs_txt_no\":\"不用了，謝謝\",\"dpmaxs_txt_ne\":\"永不於此網站\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager 延伸未正常運作。\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager 延伸未運作，因為尚未啟動 HP Client Security Manager 外掛程式。\",\"dpmaxs_txt_popup_infoMultiple\":\"HP Client Security Manager 延伸未運作，因為安裝了多個版本的 HP Client Security Manager 延伸。\",\"dpmaxs_txt_popup_infoWrongVer\":\"HP Client Security Manager 延伸未運作，因為安裝的 HP Client Security Manager 延伸版本與 HP Client Security Manager 外掛程式不相容。\",\"dpmaxs_txt_popup_actOpen\":\"開啟 HP Client Security Manager User Console Browser Integration Page，以取得進一步指示。\",\"dpmaxs_txt_popup_actRemove\":\"僅應啟用一個版本的 HP Client Security Manager 延伸。 任何其他版本均應停用或解除安裝。\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "新增  至 Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "新增登入"
+   },
+   "cmd_chgpsw": {
+      "message": "變更密碼..."
+   },
+   "cmd_editprofile": {
+      "message": "編輯登入"
+   },
+   "cmd_fillin": {
+      "message": "填入登入資料"
+   },
+   "cmd_help": {
+      "message": "說明"
+   },
+   "cmd_openpm": {
+      "message": "開啟 Password Manager"
+   },
+   "cmd_settings": {
+      "message": "圖示設定"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "您是否想要 Password Manager 記憶{account}密碼於{domain}？"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "您是否想要 Password Manager 更新{account}密碼於{domain}？"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "永不於此網站"
+   },
+   "dpmaxs_txt_no": {
+      "message": "不用了，謝謝"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "記憶"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "開啟 HP Client Security Manager User Console Browser Integration Page，以取得進一步指示。"
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "僅應啟用一個版本的 HP Client Security Manager 延伸。 任何其他版本均應停用或解除安裝。"
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager 延伸未運作，因為尚未啟動 HP Client Security Manager 外掛程式。"
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "HP Client Security Manager 延伸未運作，因為安裝了多個版本的 HP Client Security Manager 延伸。"
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "HP Client Security Manager 延伸未運作，因為安裝的 HP Client Security Manager 延伸版本與 HP Client Security Manager 外掛程式不相容。"
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager 延伸未正常運作。"
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "提供安全又方便的網站登入"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

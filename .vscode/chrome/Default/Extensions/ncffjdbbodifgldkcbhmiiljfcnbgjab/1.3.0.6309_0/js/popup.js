@@ -1,0 +1,1 @@
+function _html(a,b){document.getElementById(a).innerHTML=b}function init(){_html("msgbody",chrome.i18n.getMessage("dpmaxs_txt_popup_layout"));_html("dpmaxz_state",chrome.i18n.getMessage("dpmaxs_txt_popup_infoActivate"));_html("dpmaxz_fix",chrome.i18n.getMessage("dpmaxs_txt_popup_actOpen"))}document.addEventListener("DOMContentLoaded",function(){init()});

@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Biztonságos és kényelmes bejelentkezést biztosít webhelyekre\",\"cmd_addlogin\":\"Hozzáadás a Password Manager-hez\",\"cmd_openpm\":\"Password Manager megnyitása\",\"cmd_settings\":\"Ikonbeállítások\",\"cmd_help\":\"Súgó\",\"cmd_fillin\":\"Töltse ki a bejelentkezési adatokat\",\"cmd_editprofile\":\"Bejelentkezési adatok szerkesztése\",\"cmd_addprofile\":\"Bejelentkezési adatok hozzáadása\",\"cmd_chgpsw\":\"Jelszó módosítása...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Szeretné, hogy a Password Manager emlékezzen a {account} jelszavára itt: {domain}?\",\"dpmaxs_txt_bodyupd\":\"Szeretné, hogy a Password Manager frissítse a {account} jelszavát itt: {domain}?\",\"dpmaxs_txt_ok\":\"Emlékezzen\",\"dpmaxs_txt_no\":\"Nem, köszönöm\",\"dpmaxs_txt_ne\":\"Soha ezen az oldalon\",\"dpmaxs_txt_popup_state\":\"A(z) HP Client Security Manager bővítmény nem működik megfelelően.\",\"dpmaxs_txt_popup_infoActivate\":\"A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény nincs aktiválva.\",\"dpmaxs_txt_popup_infoMultiple\":\"A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény több verziója is telepítve van.\",\"dpmaxs_txt_popup_infoWrongVer\":\"A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény telepített verziója nem kompatibilis a(z) HP Client Security Manager bővítménnyel.\",\"dpmaxs_txt_popup_actOpen\":\"További útmutatásért lépjen a(z) HP Client Security Manager User Console Browser Integration Page oldalra.\",\"dpmaxs_txt_popup_actRemove\":\"A(z) HP Client Security Manager bővítménynek csak egy verziója lehet engedélyezve. A többi verziót le kell tiltani vagy el kell távolítani.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Hozzáadás a Password Manager-hez"
+   },
+   "cmd_addprofile": {
+      "message": "Bejelentkezési adatok hozzáadása"
+   },
+   "cmd_chgpsw": {
+      "message": "Jelszó módosítása..."
+   },
+   "cmd_editprofile": {
+      "message": "Bejelentkezési adatok szerkesztése"
+   },
+   "cmd_fillin": {
+      "message": "Töltse ki a bejelentkezési adatokat"
+   },
+   "cmd_help": {
+      "message": "Súgó"
+   },
+   "cmd_openpm": {
+      "message": "Password Manager megnyitása"
+   },
+   "cmd_settings": {
+      "message": "Ikonbeállítások"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Szeretné, hogy a Password Manager emlékezzen a {account} jelszavára itt: {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Szeretné, hogy a Password Manager frissítse a {account} jelszavát itt: {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Soha ezen az oldalon"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Nem, köszönöm"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Emlékezzen"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "További útmutatásért lépjen a(z) HP Client Security Manager User Console Browser Integration Page oldalra."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "A(z) HP Client Security Manager bővítménynek csak egy verziója lehet engedélyezve. A többi verziót le kell tiltani vagy el kell távolítani."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény nincs aktiválva."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény több verziója is telepítve van."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "A(z) HP Client Security Manager bővítmény nem működik, mert a(z) HP Client Security Manager bővítmény telepített verziója nem kompatibilis a(z) HP Client Security Manager bővítménnyel."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "A(z) HP Client Security Manager bővítmény nem működik megfelelően."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Biztonságos és kényelmes bejelentkezést biztosít webhelyekre"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

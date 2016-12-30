@@ -1,0 +1,71 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Sikker og nem logon til websteder\",\"cmd_addlogin\":\"Føj til Adgangskodemanager\",\"cmd_openpm\":\"Åbn Password Manager\",\"cmd_settings\":\"Ikonindstillinger\",\"cmd_help\":\"Hjælp\",\"cmd_fillin\":\"Udfyld logondata\",\"cmd_editprofile\":\"Rediger logon\",\"cmd_addprofile\":\"Tilføj logon\",\"cmd_chgpsw\":\"Skift adgangskode ...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Ønsker du at Adgangskodemanager husker adgangskoden for {account} on {domain}?\",\"dpmaxs_txt_bodyupd\":\" Ønsker du at Adgangskodemanager husker adgangskoden for {account} on {domain}?\",\"dpmaxs_txt_ok\":\"Husk\",\"dpmaxs_txt_no\":\"Nej, tak\",\"dpmaxs_txt_ne\":\"Aldrig for dette websted\",\"dpmaxs_txt_popup_state\":\"Udvidelsen HP Client Security Manager fungerer ikke korrekt.\",\"dpmaxs_txt_popup_infoActivate\":\"Udvidelsen HP Client Security Manager fungerer ikke, fordi plugin'en HP Client Security Manager ikke er aktiveret.\",\"dpmaxs_txt_popup_infoMultiple\":\"Udvidelsen HP Client Security Manager fungerer ikke, fordi der er installeret flere versioner af udvidelsen HP Client Security Manager.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Udvidelsen HP Client Security Manager fungerer ikke, fordi den installerede version af udvidelsen HP Client Security Manager ikke er kompatibel med plugin'en HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Åbn HP Client Security Manager User Console Browser Integration Page for yderligere hjælp.\",\"dpmaxs_txt_popup_actRemove\":\"Kun én version af udvidelsen HP Client Security Manager må være aktiveret. Alle andre versioner skal deaktiveres eller afinstalleres.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Føj til Adgangskodemanager"
+   },
+   "cmd_addprofile": {
+      "message": "Tilføj logon"
+   },
+   "cmd_chgpsw": {
+      "message": "Skift adgangskode ..."
+   },
+   "cmd_editprofile": {
+      "message": "Rediger logon"
+   },
+   "cmd_fillin": {
+      "message": "Udfyld logondata"
+   },
+   "cmd_help": {
+      "message": "Hjælp"
+   },
+   "cmd_openpm": {
+      "message": "Åbn Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Ikonindstillinger"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Ønsker du at Adgangskodemanager husker adgangskoden for {account} on {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": " Ønsker du at Adgangskodemanager husker adgangskoden for {account} on {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Aldrig for dette websted"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Nej, tak"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Husk"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Åbn HP Client Security Manager User Console Browser Integration Page for yderligere hjælp."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Kun én version af udvidelsen HP Client Security Manager må være aktiveret. Alle andre versioner skal deaktiveres eller afinstalleres."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Udvidelsen HP Client Security Manager fungerer ikke, fordi plugin'en HP Client Security Manager ikke er aktiveret."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Udvidelsen HP Client Security Manager fungerer ikke, fordi der er installeret flere versioner af udvidelsen HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Udvidelsen HP Client Security Manager fungerer ikke, fordi den installerede version af udvidelsen HP Client Security Manager ikke er kompatibel med plugin'en HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "Udvidelsen HP Client Security Manager fungerer ikke korrekt."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Sikker og nem logon til websteder"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

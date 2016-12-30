@@ -1,0 +1,71 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Παρέχει ασφαλή και εύκολη σύνδεση σε τοποθεσίες web\",\"cmd_addlogin\":\"Προσθήκη στο Password Manager\",\"cmd_openpm\":\"Άνοιγμα του Password Manager\",\"cmd_settings\":\"Ρυθμίσεις εικονιδίου\",\"cmd_help\":\"Βοήθεια\",\"cmd_fillin\":\"Συμπλήρωση δεδομένων σύνδεσης\",\"cmd_editprofile\":\"Επεξεργασία σύνδεσης\",\"cmd_addprofile\":\"Προσθήκη σύνδεσης\",\"cmd_chgpsw\":\"Αλλαγή κωδικού πρόσβασης...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Θέλετε το Password Manager να απομνημονεύσει τον κωδικό πρόσβασης για το {account} στο {domain};\",\"dpmaxs_txt_bodyupd\":\"Θέλετε το Password Manager να ενημερώσει τον κωδικό πρόσβασης για το {account} στο {domain};\",\"dpmaxs_txt_ok\":\"Απομνημόνευση\",\"dpmaxs_txt_no\":\"Όχι, ευχαριστώ\",\"dpmaxs_txt_ne\":\"Ποτέ για αυτήν την τοποθεσία\",\"dpmaxs_txt_popup_state\":\"Η επέκταση HP Client Security Manager δεν λειτουργεί κανονικά.\",\"dpmaxs_txt_popup_infoActivate\":\"Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή δεν έχει ενεργοποιηθεί η προσθήκη HP Client Security Manager.\",\"dpmaxs_txt_popup_infoMultiple\":\"Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή υπάρχουν πολλές εγκατεστημένες εκδόσεις της επέκτασης HP Client Security Manager.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή η έκδοση της επέκτασης HP Client Security Manager δεν είναι συμβατή με την προσθήκη HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Για περισσότερες οδηγίες, ανοίξτε τη Browser Integration Page στον User Console του HP Client Security Manager.\",\"dpmaxs_txt_popup_actRemove\":\"Μόνο μία προέκταση HP Client Security Manager πρέπει να είναι ενεργοποιημένη. Όλες οι άλλες εκδόσεις πρέπει να είναι απενεργοποιημένες ή να καταργηθούν.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Προσθήκη στο Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Προσθήκη σύνδεσης"
+   },
+   "cmd_chgpsw": {
+      "message": "Αλλαγή κωδικού πρόσβασης..."
+   },
+   "cmd_editprofile": {
+      "message": "Επεξεργασία σύνδεσης"
+   },
+   "cmd_fillin": {
+      "message": "Συμπλήρωση δεδομένων σύνδεσης"
+   },
+   "cmd_help": {
+      "message": "Βοήθεια"
+   },
+   "cmd_openpm": {
+      "message": "Άνοιγμα του Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Ρυθμίσεις εικονιδίου"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Θέλετε το Password Manager να απομνημονεύσει τον κωδικό πρόσβασης για το {account} στο {domain};"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Θέλετε το Password Manager να ενημερώσει τον κωδικό πρόσβασης για το {account} στο {domain};"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Ποτέ για αυτήν την τοποθεσία"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Όχι, ευχαριστώ"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Απομνημόνευση"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Για περισσότερες οδηγίες, ανοίξτε τη Browser Integration Page στον User Console του HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Μόνο μία προέκταση HP Client Security Manager πρέπει να είναι ενεργοποιημένη. Όλες οι άλλες εκδόσεις πρέπει να είναι απενεργοποιημένες ή να καταργηθούν."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή δεν έχει ενεργοποιηθεί η προσθήκη HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή υπάρχουν πολλές εγκατεστημένες εκδόσεις της επέκτασης HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Η επέκταση HP Client Security Manager δεν λειτουργεί επειδή η έκδοση της επέκτασης HP Client Security Manager δεν είναι συμβατή με την προσθήκη HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "Η επέκταση HP Client Security Manager δεν λειτουργεί κανονικά."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Παρέχει ασφαλή και εύκολη σύνδεση σε τοποθεσίες web"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

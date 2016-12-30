@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Poskytuje bezpečné a pohodlné prihlasovanie na webové stránky\",\"cmd_addlogin\":\"Pridať do Správcu hesiel\",\"cmd_openpm\":\"Otvoriť Správcu hesiel\",\"cmd_settings\":\"Nastavenie ikony\",\"cmd_help\":\"Pomocník\",\"cmd_fillin\":\"Vyplniť údaje prihlasovania\",\"cmd_editprofile\":\"Upraviť prihlásenie\",\"cmd_addprofile\":\"Pridať prihlásenie\",\"cmd_chgpsw\":\"Zmeniť heslo...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Chcete, aby si Správca hesiel zapamätal heslo pre {account} na {domain}?\",\"dpmaxs_txt_bodyupd\":\"Chcete, aby Správca hesiel aktualizoval heslo pre {account} na {domain}?\",\"dpmaxs_txt_ok\":\"Zapamätať\",\"dpmaxs_txt_no\":\"Nie, ďakujem\",\"dpmaxs_txt_ne\":\"Nikdy pre túto stránku\",\"dpmaxs_txt_popup_state\":\"Rozšírenie HP Client Security Manager nefunguje správne.\",\"dpmaxs_txt_popup_infoActivate\":\"Rozšírenie HP Client Security Manager nefunguje, pretože nebol aktivovaný doplnok HP Client Security Manager.\",\"dpmaxs_txt_popup_infoMultiple\":\"Rozšírenie HP Client Security Manager nefunguje, pretože je nainštalovaných viacero verzií rozšírenia HP Client Security Manager.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Rozšírenie HP Client Security Manager nefunguje, pretože nainštalovaná verzia rozšírenia HP Client Security Manager nie je kompatibilná s doplnkom HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Ak chcete získať ďalšie pokyny, otvorte položku HP Client Security Manager User Console Browser Integration Page.\",\"dpmaxs_txt_popup_actRemove\":\"Povolená môže byť len jedna verzia rozšírenia HP Client Security Manager. Všetky ostatné verzie sa musia zakázať alebo odinštalovať.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Pridať do Správcu hesiel"
+   },
+   "cmd_addprofile": {
+      "message": "Pridať prihlásenie"
+   },
+   "cmd_chgpsw": {
+      "message": "Zmeniť heslo..."
+   },
+   "cmd_editprofile": {
+      "message": "Upraviť prihlásenie"
+   },
+   "cmd_fillin": {
+      "message": "Vyplniť údaje prihlasovania"
+   },
+   "cmd_help": {
+      "message": "Pomocník"
+   },
+   "cmd_openpm": {
+      "message": "Otvoriť Správcu hesiel"
+   },
+   "cmd_settings": {
+      "message": "Nastavenie ikony"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Chcete, aby si Správca hesiel zapamätal heslo pre {account} na {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Chcete, aby Správca hesiel aktualizoval heslo pre {account} na {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Nikdy pre túto stránku"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Nie, ďakujem"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Zapamätať"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Ak chcete získať ďalšie pokyny, otvorte položku HP Client Security Manager User Console Browser Integration Page."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Povolená môže byť len jedna verzia rozšírenia HP Client Security Manager. Všetky ostatné verzie sa musia zakázať alebo odinštalovať."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Rozšírenie HP Client Security Manager nefunguje, pretože nebol aktivovaný doplnok HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Rozšírenie HP Client Security Manager nefunguje, pretože je nainštalovaných viacero verzií rozšírenia HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Rozšírenie HP Client Security Manager nefunguje, pretože nainštalovaná verzia rozšírenia HP Client Security Manager nie je kompatibilná s doplnkom HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "Rozšírenie HP Client Security Manager nefunguje správne."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Poskytuje bezpečné a pohodlné prihlasovanie na webové stránky"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

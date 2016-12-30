@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Tagab turvalise ja mugava veebisaitidele sisselogimise\",\"cmd_addlogin\":\"Lisa Password Manageri\",\"cmd_openpm\":\"Ava Password Manager\",\"cmd_settings\":\"Ikoonisätted\",\"cmd_help\":\"Spikker\",\"cmd_fillin\":\"Sisesta sisselogimisandmed\",\"cmd_editprofile\":\"Redigeeri sisselogimist\",\"cmd_addprofile\":\"Lisa sisselogimine\",\"cmd_chgpsw\":\"Muuda parooli ...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Kas soovite, et Password Manager peaks meeles domeeni {domain} konto {account} parooli?\",\"dpmaxs_txt_bodyupd\":\"Kas soovite, et Password Manager värskendaks domeeni {domain} konto {account} parooli?\",\"dpmaxs_txt_ok\":\"Pea meeles\",\"dpmaxs_txt_no\":\"Tänan, ei\",\"dpmaxs_txt_ne\":\"Sellel saidi puhul mitte kunagi\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager laiendus ei tööta korralikult.\",\"dpmaxs_txt_popup_infoActivate\":\"Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna HP Client Security Manager plugin pole aktiveeritud.\",\"dpmaxs_txt_popup_infoMultiple\":\"Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna installitud on mitu HP Client Security Manager laienduse versiooni.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna installitud HP Client Security Manager laienduse versioon ei ühildu HP Client Security Manager pluginaga.\",\"dpmaxs_txt_popup_actOpen\":\"Täpsemate juhisete saamiseks avage HP Client Security Manager User Console Browser Integration Page.\",\"dpmaxs_txt_popup_actRemove\":\"Aktiveeritud peaks olema ainult üks HP Client Security Manager laienduse versioon. Kõik muud versioonid tuleks deaktiveerida või desinstallida.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Lisa Password Manageri"
+   },
+   "cmd_addprofile": {
+      "message": "Lisa sisselogimine"
+   },
+   "cmd_chgpsw": {
+      "message": "Muuda parooli ..."
+   },
+   "cmd_editprofile": {
+      "message": "Redigeeri sisselogimist"
+   },
+   "cmd_fillin": {
+      "message": "Sisesta sisselogimisandmed"
+   },
+   "cmd_help": {
+      "message": "Spikker"
+   },
+   "cmd_openpm": {
+      "message": "Ava Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Ikoonisätted"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Kas soovite, et Password Manager peaks meeles domeeni {domain} konto {account} parooli?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Kas soovite, et Password Manager värskendaks domeeni {domain} konto {account} parooli?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Sellel saidi puhul mitte kunagi"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Tänan, ei"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Pea meeles"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Täpsemate juhisete saamiseks avage HP Client Security Manager User Console Browser Integration Page."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Aktiveeritud peaks olema ainult üks HP Client Security Manager laienduse versioon. Kõik muud versioonid tuleks deaktiveerida või desinstallida."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna HP Client Security Manager plugin pole aktiveeritud."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna installitud on mitu HP Client Security Manager laienduse versiooni."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Rakenduse HP Client Security Manager laiendus ei tööta korralikult, kuna installitud HP Client Security Manager laienduse versioon ei ühildu HP Client Security Manager pluginaga."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager laiendus ei tööta korralikult."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Tagab turvalise ja mugava veebisaitidele sisselogimise"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

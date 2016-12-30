@@ -1,0 +1,71 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Осигурява безопасно и удобно влизане в уебсайтове\",\"cmd_addlogin\":\"Добавяне към Password Manager\",\"cmd_openpm\":\"Отваряне на Password Manager\",\"cmd_settings\":\"Настройки на икона\",\"cmd_help\":\"Помощ\",\"cmd_fillin\":\"Попълнете данните за влизане\",\"cmd_editprofile\":\"Редактиране на влизане\",\"cmd_addprofile\":\"Добавяне на влизане\",\"cmd_chgpsw\":\"Смяна на парола...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Желаете ли Password Manager да запомни паролата за {account} в {domain}?\",\"dpmaxs_txt_bodyupd\":\"Желаете ли Password Manager да обнови паролата за {account} в {domain}?\",\"dpmaxs_txt_ok\":\"Запомни\",\"dpmaxs_txt_no\":\"Не, благодаря\",\"dpmaxs_txt_ne\":\"Никога за този сайт\",\"dpmaxs_txt_popup_state\":\"Разширението HP Client Security Manager не работи правилно.\",\"dpmaxs_txt_popup_infoActivate\":\"Разширението HP Client Security Manager не работи, тъй като добавката HP Client Security Manager не е активирана.\",\"dpmaxs_txt_popup_infoMultiple\":\"Разширението HP Client Security Manager не работи, тъй като няколко версии на разширението HP Client Security Manager са инсталирани.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Разширението HP Client Security Manager не работи, тъй като инсталираната версия на разширението HP Client Security Manager не е съвместима с добавката HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Отворете HP Client Security Manager User Console Browser Integration Page за допълнителни инструкции.\",\"dpmaxs_txt_popup_actRemove\":\"Само една версия на разширението {ProductName] трябва да бъде активирана. Всички други версии трябва да бъдат деактивирани или деинсталирани.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Добавяне към Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Добавяне на влизане"
+   },
+   "cmd_chgpsw": {
+      "message": "Смяна на парола..."
+   },
+   "cmd_editprofile": {
+      "message": "Редактиране на влизане"
+   },
+   "cmd_fillin": {
+      "message": "Попълнете данните за влизане"
+   },
+   "cmd_help": {
+      "message": "Помощ"
+   },
+   "cmd_openpm": {
+      "message": "Отваряне на Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Настройки на икона"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Желаете ли Password Manager да запомни паролата за {account} в {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Желаете ли Password Manager да обнови паролата за {account} в {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Никога за този сайт"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Не, благодаря"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Запомни"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Отворете HP Client Security Manager User Console Browser Integration Page за допълнителни инструкции."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Само една версия на разширението {ProductName] трябва да бъде активирана. Всички други версии трябва да бъдат деактивирани или деинсталирани."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Разширението HP Client Security Manager не работи, тъй като добавката HP Client Security Manager не е активирана."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Разширението HP Client Security Manager не работи, тъй като няколко версии на разширението HP Client Security Manager са инсталирани."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Разширението HP Client Security Manager не работи, тъй като инсталираната версия на разширението HP Client Security Manager не е съвместима с добавката HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "Разширението HP Client Security Manager не работи правилно."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Осигурява безопасно и удобно влизане в уебсайтове"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

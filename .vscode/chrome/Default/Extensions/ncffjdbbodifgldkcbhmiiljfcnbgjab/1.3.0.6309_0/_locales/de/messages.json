@@ -1,0 +1,71 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Bietet eine sichere und komfortable Anmeldung bei Websites\",\"cmd_addlogin\":\"Zu Password Manager hinzufügen\",\"cmd_openpm\":\"Password Manager öffnen\",\"cmd_settings\":\"Symboleinstellungen\",\"cmd_help\":\"Hilfe\",\"cmd_fillin\":\"Anmeldedaten eingeben\",\"cmd_editprofile\":\"Anmeldedaten bearbeiten\",\"cmd_addprofile\":\"Anmeldedaten hinzufügen\",\"cmd_chgpsw\":\"Kennwort ändern...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Soll der Password Manager Ihr Kennwort für {account} auf {domain}speichern?\",\"dpmaxs_txt_bodyupd\":\"Soll der Password Manager Ihr Kennwort für {account} auf {domain}aktualisieren?\",\"dpmaxs_txt_ok\":\"Merken\",\"dpmaxs_txt_no\":\"Nein danke\",\"dpmaxs_txt_ne\":\"Nie für diese Seite\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager-Erweiterung funktioniert nicht ordnungsgemäß.\",\"dpmaxs_txt_popup_infoActivate\":\"Die HP Client Security Manager-Erweiterung funktioniert nicht, weil das HP Client Security Manager-Plug-In nicht aktiviert wurde.\",\"dpmaxs_txt_popup_infoMultiple\":\"Die HP Client Security Manager-Erweiterung funktioniert nicht, weil mehrere Versionen der HP Client Security Manager-Erweiterung installiert sind.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Die HP Client Security Manager-Erweiterung funktioniert nicht, weil die installierte Version der HP Client Security Manager-Erweiterung nicht mit dem HP Client Security Manager-Plug-In kompatibel ist.\",\"dpmaxs_txt_popup_actOpen\":\"Wenn Sie weitere Anleitungen wünschen, öffnen Sie die HP Client Security Manager User Console Browser Integration Page.\",\"dpmaxs_txt_popup_actRemove\":\"Es darf nur eine Version der HP Client Security Manager-Erweiterung aktiviert sein. Alle anderen Versionen müssen deaktiviert oder deinstalliert sein.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Zu Password Manager hinzufügen"
+   },
+   "cmd_addprofile": {
+      "message": "Anmeldedaten hinzufügen"
+   },
+   "cmd_chgpsw": {
+      "message": "Kennwort ändern..."
+   },
+   "cmd_editprofile": {
+      "message": "Anmeldedaten bearbeiten"
+   },
+   "cmd_fillin": {
+      "message": "Anmeldedaten eingeben"
+   },
+   "cmd_help": {
+      "message": "Hilfe"
+   },
+   "cmd_openpm": {
+      "message": "Password Manager öffnen"
+   },
+   "cmd_settings": {
+      "message": "Symboleinstellungen"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Soll der Password Manager Ihr Kennwort für {account} auf {domain}speichern?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Soll der Password Manager Ihr Kennwort für {account} auf {domain}aktualisieren?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Nie für diese Seite"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Nein danke"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Merken"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Wenn Sie weitere Anleitungen wünschen, öffnen Sie die HP Client Security Manager User Console Browser Integration Page."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Es darf nur eine Version der HP Client Security Manager-Erweiterung aktiviert sein. Alle anderen Versionen müssen deaktiviert oder deinstalliert sein."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Die HP Client Security Manager-Erweiterung funktioniert nicht, weil das HP Client Security Manager-Plug-In nicht aktiviert wurde."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Die HP Client Security Manager-Erweiterung funktioniert nicht, weil mehrere Versionen der HP Client Security Manager-Erweiterung installiert sind."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Die HP Client Security Manager-Erweiterung funktioniert nicht, weil die installierte Version der HP Client Security Manager-Erweiterung nicht mit dem HP Client Security Manager-Plug-In kompatibel ist."
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager-Erweiterung funktioniert nicht ordnungsgemäß."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Bietet eine sichere und komfortable Anmeldung bei Websites"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

@@ -1,0 +1,71 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Poskytuje bezpečné a pohodlné přihlašování k webovým stránkám\",\"cmd_addlogin\":\"Přidat do nástroje Password Manager\",\"cmd_openpm\":\"Otevřít nástroj Password Manager\",\"cmd_settings\":\"Nastavení ikon\",\"cmd_help\":\"Nápověda\",\"cmd_fillin\":\"Vyplnit přihlašovací údaje\",\"cmd_editprofile\":\"Upravit přihlášení\",\"cmd_addprofile\":\"Přidat přihlášení\",\"cmd_chgpsw\":\"Změnit heslo...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Chcete, aby si nástroj Password Manager pamatoval heslo pro účet {account} v doméně {domain}?\",\"dpmaxs_txt_bodyupd\":\"Chcete, aby nástroj Password Manager aktualizoval heslo pro účet {account} v doméně {domain}?\",\"dpmaxs_txt_ok\":\"Zapamatovat\",\"dpmaxs_txt_no\":\"Ne, nechci\",\"dpmaxs_txt_ne\":\"Nikdy pro tento web\",\"dpmaxs_txt_popup_state\":\"Rozšíření HP Client Security Manager nefunguje správně.\",\"dpmaxs_txt_popup_infoActivate\":\"Rozšíření HP Client Security Manager nefunguje správně, protože zásuvný modul HP Client Security Manager nebyl aktivován.\",\"dpmaxs_txt_popup_infoMultiple\":\"Rozšíření HP Client Security Manager nefunguje, protože je instalováno několik verzí rozšíření HP Client Security Manager.\",\"dpmaxs_txt_popup_infoWrongVer\":\"Rozšíření HP Client Security Manager nefunguje, protože verze rozšíření HP Client Security Manager není kompatibilní s verzí zásuvného modulu HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Další pokyny získáte na stránce HP Client Security Manager User Console Browser Integration Page.\",\"dpmaxs_txt_popup_actRemove\":\"Musí být povolena pouze jedna verze rozšíření HP Client Security Manager. Ostatní verze musí být zakázány nebo odinstalovány.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Přidat do nástroje Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Přidat přihlášení"
+   },
+   "cmd_chgpsw": {
+      "message": "Změnit heslo..."
+   },
+   "cmd_editprofile": {
+      "message": "Upravit přihlášení"
+   },
+   "cmd_fillin": {
+      "message": "Vyplnit přihlašovací údaje"
+   },
+   "cmd_help": {
+      "message": "Nápověda"
+   },
+   "cmd_openpm": {
+      "message": "Otevřít nástroj Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Nastavení ikon"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Chcete, aby si nástroj Password Manager pamatoval heslo pro účet {account} v doméně {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Chcete, aby nástroj Password Manager aktualizoval heslo pro účet {account} v doméně {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Nikdy pro tento web"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Ne, nechci"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Zapamatovat"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Další pokyny získáte na stránce HP Client Security Manager User Console Browser Integration Page."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Musí být povolena pouze jedna verze rozšíření HP Client Security Manager. Ostatní verze musí být zakázány nebo odinstalovány."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "Rozšíření HP Client Security Manager nefunguje správně, protože zásuvný modul HP Client Security Manager nebyl aktivován."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "Rozšíření HP Client Security Manager nefunguje, protože je instalováno několik verzí rozšíření HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "Rozšíření HP Client Security Manager nefunguje, protože verze rozšíření HP Client Security Manager není kompatibilní s verzí zásuvného modulu HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "Rozšíření HP Client Security Manager nefunguje správně."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Poskytuje bezpečné a pohodlné přihlašování k webovým stránkám"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

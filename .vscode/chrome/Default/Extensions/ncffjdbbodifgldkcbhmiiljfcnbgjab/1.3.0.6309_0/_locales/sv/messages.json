@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Gör det möjligt att logga in säkert och bekvämt på olika webbplatser\",\"cmd_addlogin\":\"Lägg till lösenordshanteraren\",\"cmd_openpm\":\"Öppna lösenordshanterare\",\"cmd_settings\":\"Ikoninställningar\",\"cmd_help\":\"Hjälp\",\"cmd_fillin\":\"Fyll i inloggningsdata\",\"cmd_editprofile\":\"Redigera inloggning\",\"cmd_addprofile\":\"Lägg till inloggning\",\"cmd_chgpsw\":\"Ändra lösenord...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Vill du att lösenordshanteraren ska komma ihåg lösenordet för {account} på {domain}?\",\"dpmaxs_txt_bodyupd\":\"Vill du att lösenordshanteraren ska uppdatera lösenordet för {account} på {domain}?\",\"dpmaxs_txt_ok\":\"Kom ihåg\",\"dpmaxs_txt_no\":\"Nej tack\",\"dpmaxs_txt_ne\":\"Aldrig för den här webbplatsen\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager-tillägget fungerar inte.\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager-tillägget fungerar inte eftersom pluginprogrammet för HP Client Security Manager inte har aktiverats.\",\"dpmaxs_txt_popup_infoMultiple\":\"HP Client Security Manager-tillägget fungerar inte eftersom flera versioner av HP Client Security Manager-tillägget är installerade.\",\"dpmaxs_txt_popup_infoWrongVer\":\"HP Client Security Manager-tillägget fungerar inte eftersom den installerade versionen av HP Client Security Manager-tillägget inte är kompatibel med pluginprogrammet för HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Öppna HP Client Security Manager User Console Browser Integration Page för fler instruktioner.\",\"dpmaxs_txt_popup_actRemove\":\"Endast en version av HP Client Security Manager-tillägget ska aktiveras. Alla andra versioner ska inaktiveras eller avinstalleras.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Lägg till lösenordshanteraren"
+   },
+   "cmd_addprofile": {
+      "message": "Lägg till inloggning"
+   },
+   "cmd_chgpsw": {
+      "message": "Ändra lösenord..."
+   },
+   "cmd_editprofile": {
+      "message": "Redigera inloggning"
+   },
+   "cmd_fillin": {
+      "message": "Fyll i inloggningsdata"
+   },
+   "cmd_help": {
+      "message": "Hjälp"
+   },
+   "cmd_openpm": {
+      "message": "Öppna lösenordshanterare"
+   },
+   "cmd_settings": {
+      "message": "Ikoninställningar"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Vill du att lösenordshanteraren ska komma ihåg lösenordet för {account} på {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Vill du att lösenordshanteraren ska uppdatera lösenordet för {account} på {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Aldrig för den här webbplatsen"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Nej tack"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Kom ihåg"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Öppna HP Client Security Manager User Console Browser Integration Page för fler instruktioner."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Endast en version av HP Client Security Manager-tillägget ska aktiveras. Alla andra versioner ska inaktiveras eller avinstalleras."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager-tillägget fungerar inte eftersom pluginprogrammet för HP Client Security Manager inte har aktiverats."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "HP Client Security Manager-tillägget fungerar inte eftersom flera versioner av HP Client Security Manager-tillägget är installerade."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "HP Client Security Manager-tillägget fungerar inte eftersom den installerade versionen av HP Client Security Manager-tillägget inte är kompatibel med pluginprogrammet för HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager-tillägget fungerar inte."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Gör det möjligt att logga in säkert och bekvämt på olika webbplatser"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

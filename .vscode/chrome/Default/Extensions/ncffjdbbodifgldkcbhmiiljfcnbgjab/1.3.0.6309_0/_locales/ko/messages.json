@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"안전하고 편리한 웹 사이트 로그온 기능 제공\",\"cmd_addlogin\":\"암호 관리자에 추가\",\"cmd_openpm\":\"암호 관리자 열기\",\"cmd_settings\":\"아이콘 설정\",\"cmd_help\":\"도움말\",\"cmd_fillin\":\"로그온 데이터 입력\",\"cmd_editprofile\":\"로그온 편집\",\"cmd_addprofile\":\"로그온 추가\",\"cmd_chgpsw\":\"암호 변경…\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"암호 관리자에서 {domain}의 {account}에 대한 암호를 기억하도록 하시겠습니까?\",\"dpmaxs_txt_bodyupd\":\"암호 관리자에서 {domain}의 {account}에 대한 암호를 업데이트하도록 하시겠습니까?\",\"dpmaxs_txt_ok\":\"기억\",\"dpmaxs_txt_no\":\"아니요\",\"dpmaxs_txt_ne\":\"이 사이트에 대해 다시 묻지 않음\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager 확장이 제대로 작동하지 않습니다.\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager 플러그인이 활성화되지 않았기 때문에 HP Client Security Manager 확장이 제대로 작동하지 않습니다.\",\"dpmaxs_txt_popup_infoMultiple\":\"여러 버전의 HP Client Security Manager 확장이 설치되어 있으므로 HP Client Security Manager 확장이 작동하지 않습니다.\",\"dpmaxs_txt_popup_infoWrongVer\":\"설치된 버전의 HP Client Security Manager 확장이 HP Client Security Manager 플러그인과 호환되지 않으므로 HP Client Security Manager 확장이 작동하지 않습니다.\",\"dpmaxs_txt_popup_actOpen\":\"추가 지침을 보려면 HP Client Security Manager User Console Browser Integration Page을(를) 여십시오.\",\"dpmaxs_txt_popup_actRemove\":\"HP Client Security Manager 확장의 버전 하나만 활성화해야 합니다. 다른 버전은 비활성화하거나 제거해야 합니다.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "암호 관리자에 추가"
+   },
+   "cmd_addprofile": {
+      "message": "로그온 추가"
+   },
+   "cmd_chgpsw": {
+      "message": "암호 변경…"
+   },
+   "cmd_editprofile": {
+      "message": "로그온 편집"
+   },
+   "cmd_fillin": {
+      "message": "로그온 데이터 입력"
+   },
+   "cmd_help": {
+      "message": "도움말"
+   },
+   "cmd_openpm": {
+      "message": "암호 관리자 열기"
+   },
+   "cmd_settings": {
+      "message": "아이콘 설정"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "암호 관리자에서 {domain}의 {account}에 대한 암호를 기억하도록 하시겠습니까?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "암호 관리자에서 {domain}의 {account}에 대한 암호를 업데이트하도록 하시겠습니까?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "이 사이트에 대해 다시 묻지 않음"
+   },
+   "dpmaxs_txt_no": {
+      "message": "아니요"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "기억"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "추가 지침을 보려면 HP Client Security Manager User Console Browser Integration Page을(를) 여십시오."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "HP Client Security Manager 확장의 버전 하나만 활성화해야 합니다. 다른 버전은 비활성화하거나 제거해야 합니다."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager 플러그인이 활성화되지 않았기 때문에 HP Client Security Manager 확장이 제대로 작동하지 않습니다."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "여러 버전의 HP Client Security Manager 확장이 설치되어 있으므로 HP Client Security Manager 확장이 작동하지 않습니다."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "설치된 버전의 HP Client Security Manager 확장이 HP Client Security Manager 플러그인과 호환되지 않으므로 HP Client Security Manager 확장이 작동하지 않습니다."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager 확장이 제대로 작동하지 않습니다."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "안전하고 편리한 웹 사이트 로그온 기능 제공"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

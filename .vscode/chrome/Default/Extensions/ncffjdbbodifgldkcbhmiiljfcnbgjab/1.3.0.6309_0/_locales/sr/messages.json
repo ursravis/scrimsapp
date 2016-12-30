@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Pruža bezbedno i praktično prijavljivanje na veb-sajtove\",\"cmd_addlogin\":\"Dodaj u Password Manager\",\"cmd_openpm\":\"Otvori Password Manager\",\"cmd_settings\":\"Postavke ikona\",\"cmd_help\":\"Pomoć\",\"cmd_fillin\":\"Unesite podatke za prijavljivanje\",\"cmd_editprofile\":\"Uredite podatke za prijavljivanje\",\"cmd_addprofile\":\"Dodaj podatke za prijavljivanje\",\"cmd_chgpsw\":\"Promeni lozinku...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Želite li da Password Manager zapamti lozinku za nalog {account} na domenu {domain}?\",\"dpmaxs_txt_bodyupd\":\"Želite li da Password Manager ažurira lozinku za nalog {account} na domenu {domain}?\",\"dpmaxs_txt_ok\":\"Zapamti\",\"dpmaxs_txt_no\":\"Ne, hvala\",\"dpmaxs_txt_ne\":\"Nikad za ovu lokaciju\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager proširenje ne radi ispravno.\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager proširenje ne radi zato što HP Client Security Manager dodatna komponenta nije aktivirana.\",\"dpmaxs_txt_popup_infoMultiple\":\"HP Client Security Manager proširenje ne radi zato što je instalirano više verzija HP Client Security Manager proširenja.\",\"dpmaxs_txt_popup_infoWrongVer\":\"HP Client Security Manager proširenje ne radi zato što instalirana verzija HP Client Security Manager proširenja nije kompatibilna sa HP Client Security Manager dodatnom komponentom.\",\"dpmaxs_txt_popup_actOpen\":\"Otvorite HP Client Security Manager User Console Browser Integration Page za dalja uputstva.\",\"dpmaxs_txt_popup_actRemove\":\"Trebalo bi da bude omogućena samo jedna verzija HP Client Security Manager proširenja. Svaku drugu verziju bi trebalo onemogućiti ili deinstalirati.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Dodaj u Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Dodaj podatke za prijavljivanje"
+   },
+   "cmd_chgpsw": {
+      "message": "Promeni lozinku..."
+   },
+   "cmd_editprofile": {
+      "message": "Uredite podatke za prijavljivanje"
+   },
+   "cmd_fillin": {
+      "message": "Unesite podatke za prijavljivanje"
+   },
+   "cmd_help": {
+      "message": "Pomoć"
+   },
+   "cmd_openpm": {
+      "message": "Otvori Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Postavke ikona"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Želite li da Password Manager zapamti lozinku za nalog {account} na domenu {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Želite li da Password Manager ažurira lozinku za nalog {account} na domenu {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Nikad za ovu lokaciju"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Ne, hvala"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Zapamti"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Otvorite HP Client Security Manager User Console Browser Integration Page za dalja uputstva."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Trebalo bi da bude omogućena samo jedna verzija HP Client Security Manager proširenja. Svaku drugu verziju bi trebalo onemogućiti ili deinstalirati."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager proširenje ne radi zato što HP Client Security Manager dodatna komponenta nije aktivirana."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "HP Client Security Manager proširenje ne radi zato što je instalirano više verzija HP Client Security Manager proširenja."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "HP Client Security Manager proširenje ne radi zato što instalirana verzija HP Client Security Manager proširenja nije kompatibilna sa HP Client Security Manager dodatnom komponentom."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager proširenje ne radi ispravno."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Pruža bezbedno i praktično prijavljivanje na veb-sajtove"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

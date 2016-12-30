@@ -1,0 +1,802 @@
+webpackJsonpac__name_([0],{
+
+/***/ 812:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var forms_1 = __webpack_require__(164);
+var common_1 = __webpack_require__(80);
+var project_routes_1 = __webpack_require__(820);
+var project_list_component_1 = __webpack_require__(817);
+var project_details_component_1 = __webpack_require__(816);
+var project_service_1 = __webpack_require__(814);
+var index_1 = __webpack_require__(44);
+var ProjectModule = (function () {
+    function ProjectModule() {
+    }
+    ProjectModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule,
+                forms_1.FormsModule,
+                index_1.SharedModule,
+                project_routes_1.projectRouting
+            ],
+            declarations: [
+                project_list_component_1.ProjectListComponent,
+                project_details_component_1.ProjectDetailsComponent
+            ],
+            providers: [
+                project_service_1.ProjectService
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ProjectModule);
+    return ProjectModule;
+}());
+exports.ProjectModule = ProjectModule;
+
+
+/***/ },
+
+/***/ 814:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(95);
+var Observable_1 = __webpack_require__(12);
+__webpack_require__(835);
+__webpack_require__(834);
+__webpack_require__(420);
+__webpack_require__(836);
+__webpack_require__(833);
+var ProjectService = (function () {
+    function ProjectService(_http) {
+        this._http = _http;
+        this._projectUrl = '';
+        //private _projectUrl = 'http://localhost:2196/api/projects';
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this._projectUrl = "http://smartalbumwebapi.azurewebsites.net/api/projects";
+    }
+    ProjectService.prototype.getProjects = function () {
+        return this._http.get(this._projectUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: '); })
+            .catch(this.handleError);
+    };
+    ProjectService.prototype.getProject = function (id) {
+        return this.getProjects()
+            .map(function (projects) { return projects.find(function (p) { return p.projectId === id; }); });
+    };
+    ProjectService.prototype.createProject = function (project) {
+        var body = JSON.stringify(project);
+        return this._http.post(this._projectUrl, body, { headers: this.headers })
+            .toPromise()
+            .then(function () { return project; })
+            .catch(this.handleError);
+    };
+    ProjectService.prototype.updateProject = function (project) {
+        var updateURL = this._projectUrl + '/' + project.projectId;
+        var body = JSON.stringify(project);
+        return this._http.put(updateURL, body, { headers: this.headers })
+            .toPromise()
+            .then(function () { return project; })
+            .catch(this.handleError);
+    };
+    ProjectService.prototype.createThumb = function (projectId) {
+        var updateURL = this._projectUrl + '/' + projectId;
+        return this._http.get(updateURL)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
+    };
+    ProjectService.prototype.handleError = function (error) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        //console.error(error);
+        return Observable_1.Observable.throw(error || 'Server error');
+    };
+    ProjectService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], ProjectService);
+    return ProjectService;
+    var _a;
+}());
+exports.ProjectService = ProjectService;
+
+
+/***/ },
+
+/***/ 816:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(66);
+var project_1 = __webpack_require__(821);
+var SmartImage_1 = __webpack_require__(819);
+var project_service_1 = __webpack_require__(814);
+//import {Cropper}  from 'cropperjs';
+//var Cropper =require('cropperjs/dist/cropper.js');
+//var Cropper=System.import("cropperjs");
+var ProjectDetailsComponent = (function () {
+    function ProjectDetailsComponent(_route, _router, elementRef, _projectService) {
+        this._route = _route;
+        this._router = _router;
+        this.elementRef = elementRef;
+        this._projectService = _projectService;
+        this.pageTitle = 'Project Details';
+        this.showSelectedImage = false;
+        this.disableEdits = true;
+        this.files = [];
+    }
+    ProjectDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.project = new project_1.IProject();
+        this.sub = this._route.params.subscribe(function (params) {
+            var id = +params['id'];
+            if (id > 0) {
+                _this._projectService.getProject(id).subscribe(function (project) { _this.project = project; }, function (error) { return _this.errorMessage = error; });
+            }
+            else {
+                _this.project.projectId = -1;
+                _this.project.projectName = "New Project";
+                _this.project.images = [];
+            }
+        });
+        var dropbox;
+        // dropbox = document.getElementById("dropbox");
+        // dropbox.addEventListener("dragenter", this.dragenter, false);
+        // dropbox.addEventListener("dragover", this.dragover, false);
+        // dropbox.addEventListener("drop", this.drop, false);
+    };
+    ProjectDetailsComponent.prototype.dragenter = function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+    };
+    ProjectDetailsComponent.prototype.dragover = function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+    };
+    ProjectDetailsComponent.prototype.drop = function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var dt = e.dataTransfer;
+        var files = dt.files;
+        this.handleFiles(files);
+    };
+    ProjectDetailsComponent.prototype.OnSaveClick = function () {
+        var _this = this;
+        this.loading = true;
+        if (this.project.projectId > 0) {
+            this._projectService.updateProject(this.project)
+                .then(function () {
+                _this.loading = false;
+                _this.onBack();
+            });
+        }
+        else {
+            this._projectService.createProject(this.project)
+                .then(function () {
+                _this.loading = false;
+                _this.onBack();
+            });
+        }
+    };
+    ProjectDetailsComponent.prototype.onBack = function () {
+        this._router.navigate(['projects']);
+    };
+    ProjectDetailsComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    ProjectDetailsComponent.prototype.onEditClick = function () {
+        if (this.cropper != null) {
+            this.cropper.destroy();
+        }
+        var image = this.elementRef.nativeElement.querySelector('#selectedImage');
+        // this.cropper = new Cropper(image, {
+        // aspectRatio:1,
+        // scalable:false,
+        // dragMode:'move',
+        // background:false,
+        // autoCrop:false,
+        // crop: function(e) {
+        //     console.log(e.detail.x);
+        //     console.log(e.detail.y);
+        //     console.log(e.detail.width);
+        //     console.log(e.detail.height);
+        //     console.log(e.detail.rotate);
+        //     console.log(e.detail.scaleX);
+        //     console.log(e.detail.scaleY);
+        // }
+        // });
+        this.disableEdits = false;
+        //image.addEventListener('cropend',this.onShowCropped);
+    };
+    ProjectDetailsComponent.prototype.onCropClick = function () {
+        this.cropper.crop();
+    };
+    ProjectDetailsComponent.prototype.onShowCropped = function () {
+        this.croppedImageSrc = this.cropper.getCroppedCanvas().toDataURL();
+        this.project.filesSrc.push(this.croppedImageSrc);
+        document.getElementById("openModalButton").click();
+        //let editedImage = this.elementRef.nativeElement.querySelector('#croppedImage');
+        //editedImage.src=this.croppedImageSrc;
+    };
+    ProjectDetailsComponent.prototype.onZoomInClick = function () {
+        this.cropper.zoom(0.1);
+    };
+    ProjectDetailsComponent.prototype.onZoomOutClick = function () {
+        this.cropper.zoom(-0.1);
+    };
+    ProjectDetailsComponent.prototype.onRotateRightClick = function () {
+        this.cropper.rotate(90);
+    };
+    ProjectDetailsComponent.prototype.onRotateLeftClick = function () {
+        this.cropper.rotate(-90);
+    };
+    ProjectDetailsComponent.prototype.onMoveLeft = function () {
+        this.cropper.move(-10, 0);
+    };
+    ProjectDetailsComponent.prototype.onMoveRight = function () {
+        this.cropper.move(10, 0);
+    };
+    ProjectDetailsComponent.prototype.onMoveUp = function () {
+        this.cropper.move(0, -10);
+    };
+    ProjectDetailsComponent.prototype.onMoveDown = function () {
+        this.cropper.move(0, 10);
+    };
+    ProjectDetailsComponent.prototype.onFlipHor = function () {
+        this.cropper.scaleX(-1);
+    };
+    ProjectDetailsComponent.prototype.onFlipVirt = function () {
+        this.cropper.scaleY(-1);
+    };
+    ProjectDetailsComponent.prototype.onSelectImage = function (_selectedImageSrc) {
+        if (this.cropper != null) {
+            this.cropper.destroy();
+        }
+        this.showSelectedImage = true;
+        this.selectedImageSrc = _selectedImageSrc;
+        document.getElementById("openModalButton").click();
+        this.disableEdits = true;
+    };
+    // This is called when the user selects new files from the upload button
+    ProjectDetailsComponent.prototype.fileChange = function (input) {
+        this.handleFiles(input.files);
+    };
+    ProjectDetailsComponent.prototype.handleFiles = function (files) {
+        var _this = this;
+        // Loop through each picture file
+        for (var i = 0; i < files.length; i++) {
+            //this.files.push(input.files[i]);
+            var file = files[i];
+            // Create an img element and add the image file data to it
+            var img = document.createElement("img");
+            //img.src = window.URL.createObjectURL(input.files[i]);
+            // Create a FileReader
+            var reader = new FileReader();
+            // Add an event listener to deal with the file when the reader is complete
+            reader.addEventListener("load", function (event) {
+                // Get the event.target.result from the reader (base64 of the image)
+                img.src = event.target.result;
+                // img.src =reader.result;
+                // Resize the image
+                //var resized_img = this.resize(img);
+                var thumbNail = _this.createThumbnail(img, 64, file.type);
+                var imageData = new SmartImage_1.SmartImage();
+                imageData.thumbnailSrc = thumbNail;
+                imageData.imageSrc = event.target.result;
+                imageData.imageName = file.name;
+                imageData.imageType = file.type;
+                // Push the img src (base64 string) into our array that we display in our html template
+                _this.project.images.push(imageData);
+            }, false);
+            reader.readAsDataURL(files[i]);
+        }
+    };
+    ProjectDetailsComponent.prototype.createThumbnail = function (img, MAX_Pixel, imageType) {
+        if (MAX_Pixel === void 0) { MAX_Pixel = 64; }
+        if (imageType === void 0) { imageType = 'image/jpeg'; }
+        var canvas = document.createElement("canvas");
+        var width = img.width;
+        var height = img.height;
+        var factor;
+        if (width > height) {
+            factor = MAX_Pixel / width;
+        }
+        else {
+            factor = MAX_Pixel / height;
+        }
+        canvas.width = width * factor;
+        canvas.height = height * factor;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        var dataUrl = canvas.toDataURL(imageType);
+        return dataUrl;
+    };
+    ProjectDetailsComponent.prototype.resize = function (img, MAX_WIDTH, MAX_HEIGHT) {
+        if (MAX_WIDTH === void 0) { MAX_WIDTH = 300; }
+        if (MAX_HEIGHT === void 0) { MAX_HEIGHT = 300; }
+        var canvas = document.createElement("canvas");
+        console.log("Size Before: " + img.src.length + " bytes");
+        var width = img.width;
+        var height = img.height;
+        if (width > height) {
+            if (width > MAX_WIDTH) {
+                height *= MAX_WIDTH / width;
+                width = MAX_WIDTH;
+            }
+        }
+        else {
+            if (height > MAX_HEIGHT) {
+                width *= MAX_HEIGHT / height;
+                height = MAX_HEIGHT;
+            }
+        }
+        canvas.width = width;
+        canvas.height = height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+        var dataUrl = canvas.toDataURL('image/jpeg');
+        // IMPORTANT: 'jpeg' NOT 'jpg'
+        console.log("Size After:  " + dataUrl.length + " bytes");
+        return dataUrl;
+    };
+    ProjectDetailsComponent.prototype.createThumbsOnServer = function () {
+        var _this = this;
+        if (this.project != null) {
+            this.loading = true;
+            this._projectService.createThumb(this.project.projectId)
+                .then(function (project) {
+                return _this.onBack();
+            });
+        }
+    };
+    ProjectDetailsComponent = __decorate([
+        core_1.Component({ template: __webpack_require__(829),
+            styles: [__webpack_require__(840)] }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object, (typeof (_c = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _c) || Object, (typeof (_d = typeof project_service_1.ProjectService !== 'undefined' && project_service_1.ProjectService) === 'function' && _d) || Object])
+    ], ProjectDetailsComponent);
+    return ProjectDetailsComponent;
+    var _a, _b, _c, _d;
+}());
+exports.ProjectDetailsComponent = ProjectDetailsComponent;
+
+
+/***/ },
+
+/***/ 817:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var project_service_1 = __webpack_require__(814);
+var index_1 = __webpack_require__(44);
+var ProjectListComponent = (function () {
+    function ProjectListComponent(_productService, userService) {
+        this._productService = _productService;
+        this.userService = userService;
+        this.pageTitle = 'Project List';
+        this.pageTitle = 'Project List : ' + userService.loggedInUser.firstName + ' ' + userService.loggedInUser.lastName;
+    }
+    ProjectListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._productService.getProjects()
+            .subscribe(function (projects) { return _this.projects = projects; }, function (error) { return _this.errorMessage = error; });
+    };
+    ProjectListComponent = __decorate([
+        core_1.Component({
+            template: __webpack_require__(830),
+            styles: [__webpack_require__(841)]
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof project_service_1.ProjectService !== 'undefined' && project_service_1.ProjectService) === 'function' && _a) || Object, (typeof (_b = typeof index_1.UserService !== 'undefined' && index_1.UserService) === 'function' && _b) || Object])
+    ], ProjectListComponent);
+    return ProjectListComponent;
+    var _a, _b;
+}());
+exports.ProjectListComponent = ProjectListComponent;
+
+
+/***/ },
+
+/***/ 819:
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+var SmartImage = (function () {
+    function SmartImage() {
+    }
+    return SmartImage;
+}());
+exports.SmartImage = SmartImage;
+
+
+/***/ },
+
+/***/ 820:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var router_1 = __webpack_require__(66);
+var project_details_component_1 = __webpack_require__(816);
+var project_list_component_1 = __webpack_require__(817);
+exports.ProjectRoutes = [
+    { path: '', component: project_list_component_1.ProjectListComponent },
+    { path: ':id', component: project_details_component_1.ProjectDetailsComponent }
+];
+exports.projectRouting = router_1.RouterModule.forChild(exports.ProjectRoutes);
+
+
+/***/ },
+
+/***/ 821:
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+var IProject = (function () {
+    function IProject() {
+    }
+    return IProject;
+}());
+exports.IProject = IProject;
+
+
+/***/ },
+
+/***/ 826:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(94)();
+// imports
+
+
+// module
+exports.push([module.i, ".custom-component-drop-zone {\r\n      width: 300px;\r\n      height: 100px;\r\n    }\r\n\r\n    .uploader {\r\n    position:relative; \r\n    overflow:hidden; \r\n    width:300px; \r\n    height:50px;\r\n    background:#f3f3f3; \r\n    border:2px dashed #e8e8e8;\r\n}\r\n\r\n#filePhoto{\r\n    position:absolute;\r\n    width:300px;\r\n    height:50px;\r\n    top:0px;\r\n    left:0;\r\n    z-index:2;\r\n    opacity:0;\r\n    cursor:pointer;\r\n}", ""]);
+
+// exports
+
+
+/***/ },
+
+/***/ 827:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(94)();
+// imports
+
+
+// module
+exports.push([module.i, "thead {\r\n    color: #337AB7;\r\n}", ""]);
+
+// exports
+
+
+/***/ },
+
+/***/ 829:
+/***/ function(module, exports) {
+
+module.exports = "<div class='panel panel-primary'>\r\n\t<div class='panel-heading' style='font-size:large'>\r\n\t\t{{pageTitle + ': ' + project.projectName }}\r\n\t\t<button id=\"btnThumb\" class=\"btn btn-default pull-right\" (click)=\"createThumbsOnServer()\">Create Thumbs</button>\r\n\t</div>\r\n\r\n\t<div class='panel-body'>\r\n\t\t<form class=\"form-inline\">\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<label for=\"exampleInputName2\">Project Name:</label>\r\n\t\t\t\t<input name=\"projectNametxt\" type=\"text\" class=\"form-control\" id=\"exampleInputName2\" placeholder=\"Jane Doe\" [(ngModel)]=\"project.projectName\">\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<label>Images</label>\r\n\t\t\r\n                    <div class=\"uploader\" onclick=\"$('#filePhoto').click()\" id=\"dropbox\" \r\n                    (dragenter)=\"dragenter($event)\"\r\n                     (dragover)=\"dragover($event)\"\r\n                      (drop)=\"drop($event)\"\r\n                    >\r\n                    Drop or click to upload Images here.\r\n                    <input type=\"file\" name=\"userprofile_picture\"  multiple id=\"filePhoto\"  (change)=\"fileChange(input)\"   #input />\r\n                    </div>\r\n                    <!--<input type=\"file\" multiple (change)=\"fileChange(input)\" #input />\r\n                    \r\n                <div ng2FileDrop class=\"custom-component-drop-zone\" (ng2FileDropFileAccepted)=\"dragFileAccepted($event)\" ></div>--> \r\n\r\n\r\n\t\t\t</div>\r\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\" (click)=\"OnSaveClick()\">Save</button>\r\n\t\t</form>\r\n\r\n\t\t<button type=\"button\" id=\"openModalButton\" [hidden]=\"true\" data-toggle=\"modal\" data-target=\"#myModal\">Open Modal</button>\r\n\t\t<div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\t\t<div id=\"myModal\" class=\"modal modal-wide fade\" role=\"dialog\">\r\n\t\t\t\t<div class=\"modal-dialog  modal-lg\">\r\n\t\t\t\t\t<div class=\"modal-content\">\r\n\t\t\t\t\t\t<div class=\"modal-header\">\r\n\t\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n\t\t\t\t\t\t\t<h4 class=\"modal-title\">Edit Image</h4>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"modal-body\">\r\n\t\t\t\t\t\t\t<div *ngIf=\"showSelectedImage\">\r\n\t\t\t\t\t\t\t\t<table style=\"height: 600px\">\r\n\t\t\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t\t\t<td width=\"100%\" valign=\"center\" style=\"text-align: center;\" align=\"center\">\r\n\t\t\t\t\t\t\t\t\t\t\t<img id=\"selectedImage\" class=\"image\" src=\"{{ selectedImageSrc }}\" alt=\"\" />\r\n\t\t\t\t\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t\t\t\t\t<!--<td width=\"135px\" valign=\"top\">\r\n\r\n                                            <a class='btn btn-default' (click)='onEditClick()' style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/edit.png\" style=\"height:25px\" /> Edit\r\n                                            </a>\r\n                                            <br/>\r\n\r\n                                            <button class='btn btn-default' (click)='onCropClick()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/cut.png\" style=\"height:25px\" /> Crop\r\n                                            </button>\r\n                                            <br/>\r\n\r\n\r\n                                            <button class='btn btn-default' (click)='onZoomOutClick()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/expand.png\" style=\"height:25px\" /> Zoom Out\r\n                                            </button>\r\n                                            <br/>\r\n\r\n                                            <button class='btn btn-default' (click)='onZoomInClick()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/decrease.png\" style=\"height:25px\" /> Zoom In\r\n                                            </button>\r\n                                            <br/>\r\n                                            <button class='btn btn-default' (click)='onRotateRightClick()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/redo.png\" style=\"height:25px\" /> Rotate Right\r\n                                            </button>\r\n                                            <br/>\r\n                                            <button class='btn btn-default' (click)='onRotateLeftClick()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/undo.png\" style=\"height:25px\" /> Rotate Left\r\n                                            </button>\r\n                                            <br/>\r\n                                            <button class='btn btn-default' (click)='onShowCropped()' [disabled]=\"disableEdits\"  style='width:135px ;margin:5px;text-align:left'>\r\n                                                <img src=\"./assets/images/download.png\" style=\"height:25px\" /> Save As\r\n                                            </button>\r\n                                            <br/>\r\n                                            <div class=\"btn-group\" style=\"margin:5px\">\r\n                                                <button type=\"button\" class=\"btn btn-primary\"  [disabled]=\"disableEdits\"  data-method=\"move\" data-option=\"-10\" data-second-option=\"0\" title=\"Move Left\"\r\n                                                    (click)=\"onMoveLeft()\">\r\n                                               \r\n                                                <span class=\"fa fa-arrow-left\"></span>\r\n                                              \r\n                                            </button>\r\n                                                <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableEdits\"  data-method=\"move\" data-option=\"10\" data-second-option=\"0\" title=\"Move Right\"\r\n                                                    (click)=\"onMoveRight()\">\r\n                                              \r\n                                                <span class=\"fa fa-arrow-right\"></span>\r\n                                                \r\n                                            </button>\r\n                                            </div>\r\n\r\n                                            <div class=\"btn-group\" style=\"margin:5px\">\r\n                                                <button type=\"button\" class=\"btn btn-primary\"  [disabled]=\"disableEdits\"  data-method=\"move\" data-option=\"0\" data-second-option=\"-10\" title=\"Move Up\"\r\n                                                    (click)=\"onMoveUp()\">\r\n                                                \r\n                                                <span class=\"fa fa-arrow-up\"></span>\r\n                                               \r\n                                            </button>\r\n                                                <button type=\"button\" class=\"btn btn-primary\"  [disabled]=\"disableEdits\"  data-method=\"move\" data-option=\"0\" data-second-option=\"10\" title=\"Move Down\"\r\n                                                    (click)=\"onMoveDown()\">\r\n                                              \r\n                                                <span class=\"fa fa-arrow-down\"></span>\r\n                                               \r\n                                            </button>\r\n                                            </div>\r\n                                            <div class=\"btn-group\" style=\"margin:5px\">\r\n                                                <button type=\"button\" class=\"btn btn-primary\"  [disabled]=\"disableEdits\"  data-method=\"scaleX\" data-option=\"-1\" title=\"Flip Horizontal\" (click)=\"onFlipHor()\">\r\n                                           \r\n                                            <span class=\"fa fa-arrows-h\"></span>\r\n                                           \r\n                                        </button>\r\n                                                <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"disableEdits\"  data-method=\"scaleY\" data-option=\"-1\" title=\"Flip Vertical\" (click)=\"onFlipVirt()\">\r\n                                           \r\n                                            <span class=\"fa fa-arrows-v\"></span>\r\n                                          \r\n                                        </button>\r\n                                            </div>\r\n\r\n                                            <br/>\r\n                                        </td>-->\r\n\t\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\t</table>\r\n\r\n\t\t\t\t\t\t\t\t<!--<img id=\"croppedImage\" src='{{ croppedImageSrc }}' alt=\"\" />-->\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"modal-footer\">\r\n\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<ul id=\"listofImages\">\r\n\t\t\t\t<li *ngFor=\"let imageData of project.images\" (click)='onSelectImage(imageData.imageSrc)' align=\"center\" style=\"text-align: center;\">\r\n\r\n\t\t\t\t\t<img id=\"image\" class=\"listImage\" src='{{ imageData.imageSrc }}' alt=\"\" />\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<label style=\"display: inline-block; text-align: left;verticle-align: middle\">{{ imageData.imageName }}</label>\r\n\t\t\t\t\t\t<img id=\"thumbImage\" class=\"thumbImage\" src='{{ imageData.thumbnailSrc }}' alt=\"\" />\r\n\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\r\n\t\t</div>\r\n\t</div>\r\n\t<div *ngIf=\"loading\" style=\" opacity: 1;\r\n    animation: fade 2s linear;\">\r\n\t\t<i class=\"center-fix main-spinner fa fa-spin fa-spinner\"></i>\r\n\t</div>\r\n\t<div class='panel-footer'>\r\n\t\t<a class='btn btn-default' (click)='onBack()' style='width:80px'>\r\n\t\t\t<i class='glyphicon glyphicon-chevron-left'></i> Back\r\n\t\t</a>\r\n\t</div>\r\n\r\n</div>"
+
+/***/ },
+
+/***/ 830:
+/***/ function(module, exports) {
+
+module.exports = "<div class='panel panel-primary'>\r\n    <div class='panel-heading'>\r\n        {{pageTitle}}\r\n          <button class=\"btn btn-default pull-right\" [routerLink]=\"['/project', -1]\" *ngIf=\"userService.isAdmin()\" >New</button>\r\n    </div>\r\n\r\n    <!-- Filter the projects   -->\r\n    <div class='panel-body'>\r\n\r\n\r\n        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>\r\n        <div *ngIf=\"!(projects && projects.length)\">\r\n            <i class=\"center-fix main-spinner fa fa-spin fa-spinner\" ></i>\r\n            </div>\r\n        <div class='table-responsive'>\r\n            <table class='table' *ngIf='projects && projects.length'>\r\n                <thead>\r\n                    <tr>\r\n                        <!--<th>\r\n                            <button class='btn btn-primary' (click)='toggleImage()'>\r\n                                {{showImage ? 'Hide' : 'Show'}} Image\r\n                            </button>\r\n                        </th>-->\r\n                        <th>Project</th>\r\n                        <th>Created By</th>\r\n                        <th>No Of Images</th>\r\n\r\n\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor='let project of projects '>\r\n                        <!--<td>\r\n                            <img *ngIf='showImage'\r\n                                 [src]='product.imageUrl'\r\n                                 [title]='product.productName | uppercase'\r\n                                 [style.width.px]='imageWidth' \r\n                                 [style.margin.px]='imageMargin'>\r\n                        </td>-->\r\n                        <td> <a [routerLink]=\"['/projects', project.projectId]\">\r\n                            {{project.projectName}}\r\n                            </a>\r\n                        </td>\r\n                        <td>{{ project.createdBy }}</td>\r\n                        <td>{{ project.noOfImages }}</td>\r\n\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ },
+
+/***/ 833:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var Observable_1 = __webpack_require__(12);
+var throw_1 = __webpack_require__(838);
+Observable_1.Observable.throw = throw_1._throw;
+//# sourceMappingURL=throw.js.map
+
+/***/ },
+
+/***/ 834:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var Observable_1 = __webpack_require__(12);
+var catch_1 = __webpack_require__(262);
+Observable_1.Observable.prototype.catch = catch_1._catch;
+Observable_1.Observable.prototype._catch = catch_1._catch;
+//# sourceMappingURL=catch.js.map
+
+/***/ },
+
+/***/ 835:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var Observable_1 = __webpack_require__(12);
+var do_1 = __webpack_require__(839);
+Observable_1.Observable.prototype.do = do_1._do;
+Observable_1.Observable.prototype._do = do_1._do;
+//# sourceMappingURL=do.js.map
+
+/***/ },
+
+/***/ 836:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var Observable_1 = __webpack_require__(12);
+var toPromise_1 = __webpack_require__(421);
+Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
+//# sourceMappingURL=toPromise.js.map
+
+/***/ },
+
+/***/ 837:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Observable_1 = __webpack_require__(12);
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var ErrorObservable = (function (_super) {
+    __extends(ErrorObservable, _super);
+    function ErrorObservable(error, scheduler) {
+        _super.call(this);
+        this.error = error;
+        this.scheduler = scheduler;
+    }
+    /**
+     * Creates an Observable that emits no items to the Observer and immediately
+     * emits an error notification.
+     *
+     * <span class="informal">Just emits 'error', and nothing else.
+     * </span>
+     *
+     * <img src="./img/throw.png" width="100%">
+     *
+     * This static operator is useful for creating a simple Observable that only
+     * emits the error notification. It can be used for composing with other
+     * Observables, such as in a {@link mergeMap}.
+     *
+     * @example <caption>Emit the number 7, then emit an error.</caption>
+     * var result = Rx.Observable.throw(new Error('oops!')).startWith(7);
+     * result.subscribe(x => console.log(x), e => console.error(e));
+     *
+     * @example <caption>Map and flattens numbers to the sequence 'a', 'b', 'c', but throw an error for 13</caption>
+     * var interval = Rx.Observable.interval(1000);
+     * var result = interval.mergeMap(x =>
+     *   x === 13 ?
+     *     Rx.Observable.throw('Thirteens are bad') :
+     *     Rx.Observable.of('a', 'b', 'c')
+     * );
+     * result.subscribe(x => console.log(x), e => console.error(e));
+     *
+     * @see {@link create}
+     * @see {@link empty}
+     * @see {@link never}
+     * @see {@link of}
+     *
+     * @param {any} error The particular Error to pass to the error notification.
+     * @param {Scheduler} [scheduler] A {@link Scheduler} to use for scheduling
+     * the emission of the error notification.
+     * @return {Observable} An error Observable: emits only the error notification
+     * using the given error argument.
+     * @static true
+     * @name throw
+     * @owner Observable
+     */
+    ErrorObservable.create = function (error, scheduler) {
+        return new ErrorObservable(error, scheduler);
+    };
+    ErrorObservable.dispatch = function (arg) {
+        var error = arg.error, subscriber = arg.subscriber;
+        subscriber.error(error);
+    };
+    ErrorObservable.prototype._subscribe = function (subscriber) {
+        var error = this.error;
+        var scheduler = this.scheduler;
+        if (scheduler) {
+            return scheduler.schedule(ErrorObservable.dispatch, 0, {
+                error: error, subscriber: subscriber
+            });
+        }
+        else {
+            subscriber.error(error);
+        }
+    };
+    return ErrorObservable;
+}(Observable_1.Observable));
+exports.ErrorObservable = ErrorObservable;
+//# sourceMappingURL=ErrorObservable.js.map
+
+/***/ },
+
+/***/ 838:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var ErrorObservable_1 = __webpack_require__(837);
+exports._throw = ErrorObservable_1.ErrorObservable.create;
+//# sourceMappingURL=throw.js.map
+
+/***/ },
+
+/***/ 839:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Subscriber_1 = __webpack_require__(30);
+/**
+ * Perform a side effect for every emission on the source Observable, but return
+ * an Observable that is identical to the source.
+ *
+ * <span class="informal">Intercepts each emission on the source and runs a
+ * function, but returns an output which is identical to the source.</span>
+ *
+ * <img src="./img/do.png" width="100%">
+ *
+ * Returns a mirrored Observable of the source Observable, but modified so that
+ * the provided Observer is called to perform a side effect for every value,
+ * error, and completion emitted by the source. Any errors that are thrown in
+ * the aforementioned Observer or handlers are safely sent down the error path
+ * of the output Observable.
+ *
+ * This operator is useful for debugging your Observables for the correct values
+ * or performing other side effects.
+ *
+ * Note: this is different to a `subscribe` on the Observable. If the Observable
+ * returned by `do` is not subscribed, the side effects specified by the
+ * Observer will never happen. `do` therefore simply spies on existing
+ * execution, it does not trigger an execution to happen like `subscribe` does.
+ *
+ * @example <caption>Map every every click to the clientX position of that click, while also logging the click event</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var positions = clicks
+ *   .do(ev => console.log(ev))
+ *   .map(ev => ev.clientX);
+ * positions.subscribe(x => console.log(x));
+ *
+ * @see {@link map}
+ * @see {@link subscribe}
+ *
+ * @param {Observer|function} [nextOrObserver] A normal Observer object or a
+ * callback for `next`.
+ * @param {function} [error] Callback for errors in the source.
+ * @param {function} [complete] Callback for the completion of the source.
+ * @return {Observable} An Observable identical to the source, but runs the
+ * specified Observer or callback(s) for each item.
+ * @method do
+ * @name do
+ * @owner Observable
+ */
+function _do(nextOrObserver, error, complete) {
+    return this.lift(new DoOperator(nextOrObserver, error, complete));
+}
+exports._do = _do;
+var DoOperator = (function () {
+    function DoOperator(nextOrObserver, error, complete) {
+        this.nextOrObserver = nextOrObserver;
+        this.error = error;
+        this.complete = complete;
+    }
+    DoOperator.prototype.call = function (subscriber, source) {
+        return source._subscribe(new DoSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
+    };
+    return DoOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var DoSubscriber = (function (_super) {
+    __extends(DoSubscriber, _super);
+    function DoSubscriber(destination, nextOrObserver, error, complete) {
+        _super.call(this, destination);
+        var safeSubscriber = new Subscriber_1.Subscriber(nextOrObserver, error, complete);
+        safeSubscriber.syncErrorThrowable = true;
+        this.add(safeSubscriber);
+        this.safeSubscriber = safeSubscriber;
+    }
+    DoSubscriber.prototype._next = function (value) {
+        var safeSubscriber = this.safeSubscriber;
+        safeSubscriber.next(value);
+        if (safeSubscriber.syncErrorThrown) {
+            this.destination.error(safeSubscriber.syncErrorValue);
+        }
+        else {
+            this.destination.next(value);
+        }
+    };
+    DoSubscriber.prototype._error = function (err) {
+        var safeSubscriber = this.safeSubscriber;
+        safeSubscriber.error(err);
+        if (safeSubscriber.syncErrorThrown) {
+            this.destination.error(safeSubscriber.syncErrorValue);
+        }
+        else {
+            this.destination.error(err);
+        }
+    };
+    DoSubscriber.prototype._complete = function () {
+        var safeSubscriber = this.safeSubscriber;
+        safeSubscriber.complete();
+        if (safeSubscriber.syncErrorThrown) {
+            this.destination.error(safeSubscriber.syncErrorValue);
+        }
+        else {
+            this.destination.complete();
+        }
+    };
+    return DoSubscriber;
+}(Subscriber_1.Subscriber));
+//# sourceMappingURL=do.js.map
+
+/***/ },
+
+/***/ 840:
+/***/ function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(826);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ },
+
+/***/ 841:
+/***/ function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(827);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }
+
+});
+//# sourceMappingURL=0.map

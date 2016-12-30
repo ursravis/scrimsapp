@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Webサイトへの安全で便利なログオンが可能\",\"cmd_addlogin\":\"[Password Manager]への追加\",\"cmd_openpm\":\"[Password Manager]を開く\",\"cmd_settings\":\"アイコンの設定\",\"cmd_help\":\"ヘルプ\",\"cmd_fillin\":\"ログオン データの入力\",\"cmd_editprofile\":\"ログオンの編集\",\"cmd_addprofile\":\"ログオンの追加\",\"cmd_chgpsw\":\"パスワードの変更...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"{domain}で{account}のパスワードを[HP Password Manager]に記憶させますか?\",\"dpmaxs_txt_bodyupd\":\"{domain}で{account}のパスワードを[HP Password Manager]に更新させますか?\",\"dpmaxs_txt_ok\":\"記憶\",\"dpmaxs_txt_no\":\"いいえ\",\"dpmaxs_txt_ne\":\"今後このサイトでは表示しない\",\"dpmaxs_txt_popup_state\":\"[HP Client Security Manager]の拡張機能が正常に動作していません。\",\"dpmaxs_txt_popup_infoActivate\":\"[HP Client Security Manager]のプラグインが有効になっていないため、[HP Client Security Manager]の拡張機能が動作していません。\",\"dpmaxs_txt_popup_infoMultiple\":\"複数のバージョンの[HP Client Security Manager]のプラグインがインストールされているため、[HP Client Security Manager]の拡張機能が動作していません。\",\"dpmaxs_txt_popup_infoWrongVer\":\"インストールされている[HP Client Security Manager]の拡張機能のバージョンが[HP Client Security Manager]のプラグインと互換性がないため、[HP Client Security Manager]の拡張機能が動作していません。\",\"dpmaxs_txt_popup_actOpen\":\"詳しい手順については、[HP Client Security Manager]の[User Console]の「Browser Integration Page」を参照してください。\",\"dpmaxs_txt_popup_actRemove\":\"[HP Client Security Manager]の拡張機能は1つのバージョンのみ有効にしてください。他のバージョンはすべて無効にするか、アンインストールしてください。\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "[Password Manager]への追加"
+   },
+   "cmd_addprofile": {
+      "message": "ログオンの追加"
+   },
+   "cmd_chgpsw": {
+      "message": "パスワードの変更..."
+   },
+   "cmd_editprofile": {
+      "message": "ログオンの編集"
+   },
+   "cmd_fillin": {
+      "message": "ログオン データの入力"
+   },
+   "cmd_help": {
+      "message": "ヘルプ"
+   },
+   "cmd_openpm": {
+      "message": "[Password Manager]を開く"
+   },
+   "cmd_settings": {
+      "message": "アイコンの設定"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "{domain}で{account}のパスワードを[HP Password Manager]に記憶させますか?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "{domain}で{account}のパスワードを[HP Password Manager]に更新させますか?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "今後このサイトでは表示しない"
+   },
+   "dpmaxs_txt_no": {
+      "message": "いいえ"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "記憶"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "詳しい手順については、[HP Client Security Manager]の[User Console]の「Browser Integration Page」を参照してください。"
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "[HP Client Security Manager]の拡張機能は1つのバージョンのみ有効にしてください。他のバージョンはすべて無効にするか、アンインストールしてください。"
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "[HP Client Security Manager]のプラグインが有効になっていないため、[HP Client Security Manager]の拡張機能が動作していません。"
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "複数のバージョンの[HP Client Security Manager]のプラグインがインストールされているため、[HP Client Security Manager]の拡張機能が動作していません。"
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "インストールされている[HP Client Security Manager]の拡張機能のバージョンが[HP Client Security Manager]のプラグインと互換性がないため、[HP Client Security Manager]の拡張機能が動作していません。"
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "[HP Client Security Manager]の拡張機能が正常に動作していません。"
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Webサイトへの安全で便利なログオンが可能"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Web sitelerinde güvenli ve rahat oturum açma sağlar\",\"cmd_addlogin\":\"Password Manager'e ekle\",\"cmd_openpm\":\"Password Manager'i aç\",\"cmd_settings\":\"Simge Ayarları\",\"cmd_help\":\"Yardım\",\"cmd_fillin\":\"Oturum açma verilerini doldur\",\"cmd_editprofile\":\"Oturum açmayı düzenle\",\"cmd_addprofile\":\"Oturum açma ekle\",\"cmd_chgpsw\":\"Parolayı Değiştir...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Password Manager'in {domain} üzerindeki {account} için parolayı hatırlamasını istiyor musunuz?\",\"dpmaxs_txt_bodyupd\":\"Password Manager'in {domain} üzerindeki {account} için parolayı güncelleştirmesini istiyor musunuz?\",\"dpmaxs_txt_ok\":\"Hatırla\",\"dpmaxs_txt_no\":\"Hayır, teşekkürler\",\"dpmaxs_txt_ne\":\"Bu sayfa için asla\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager uzantısı düzgün çalışmıyor.\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager uzantısı çalışmıyor çünkü HP Client Security Manager eklentisi aktive edilmemiş.\",\"dpmaxs_txt_popup_infoMultiple\":\"HP Client Security Manager uzantısı çalışmıyor çünkü birden fazla HP Client Security Manager uzantısı sürümü yüklü.\",\"dpmaxs_txt_popup_infoWrongVer\":\"HP Client Security Manager uzantısı çalışmıyor çünkü yüklü HP Client Security Manager uzantısı sürümü HP Client Security Manager eklentisi ile uyumlu değil.\",\"dpmaxs_txt_popup_actOpen\":\"Diğer yönergeler için HP Client Security Manager User Console Browser Integration Page sayfasını açın.\",\"dpmaxs_txt_popup_actRemove\":\"HP Client Security Manager uzantısının yalnızca tek sürümü etkin olmalıdır. Diğer sürümler devre dışı bırakılmalı veya kaldırılmalıdır.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Password Manager'e ekle"
+   },
+   "cmd_addprofile": {
+      "message": "Oturum açma ekle"
+   },
+   "cmd_chgpsw": {
+      "message": "Parolayı Değiştir..."
+   },
+   "cmd_editprofile": {
+      "message": "Oturum açmayı düzenle"
+   },
+   "cmd_fillin": {
+      "message": "Oturum açma verilerini doldur"
+   },
+   "cmd_help": {
+      "message": "Yardım"
+   },
+   "cmd_openpm": {
+      "message": "Password Manager'i aç"
+   },
+   "cmd_settings": {
+      "message": "Simge Ayarları"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Password Manager'in {domain} üzerindeki {account} için parolayı hatırlamasını istiyor musunuz?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Password Manager'in {domain} üzerindeki {account} için parolayı güncelleştirmesini istiyor musunuz?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Bu sayfa için asla"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Hayır, teşekkürler"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Hatırla"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Diğer yönergeler için HP Client Security Manager User Console Browser Integration Page sayfasını açın."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "HP Client Security Manager uzantısının yalnızca tek sürümü etkin olmalıdır. Diğer sürümler devre dışı bırakılmalı veya kaldırılmalıdır."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager uzantısı çalışmıyor çünkü HP Client Security Manager eklentisi aktive edilmemiş."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "HP Client Security Manager uzantısı çalışmıyor çünkü birden fazla HP Client Security Manager uzantısı sürümü yüklü."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "HP Client Security Manager uzantısı çalışmıyor çünkü yüklü HP Client Security Manager uzantısı sürümü HP Client Security Manager eklentisi ile uyumlu değil."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager uzantısı düzgün çalışmıyor."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Web sitelerinde güvenli ve rahat oturum açma sağlar"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

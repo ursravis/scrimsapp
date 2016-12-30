@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Suteikia galimybę saugiai ir patogiai jungtis prie žiniatinklio svetainių\",\"cmd_addlogin\":\"Įtraukti į „Password Manager“\",\"cmd_openpm\":\"Atidaryti „Password Manager“\",\"cmd_settings\":\"Piktogramos nuostatos\",\"cmd_help\":\"Žinynas\",\"cmd_fillin\":\"Pildyti prisijungimo duomenis\",\"cmd_editprofile\":\"Redaguoti prisijungimo vardą\",\"cmd_addprofile\":\"Įtraukti prisijungimo vardą\",\"cmd_chgpsw\":\"Keisti slaptažodį...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Ar norite, kad „Password Manager“ įsimintų {account} slaptažodį {domain} domene?\",\"dpmaxs_txt_bodyupd\":\"Ar norite, kad „Password Manager“ atnaujintų {account} slaptažodį {domain} domene?\",\"dpmaxs_txt_ok\":\"Įsiminti\",\"dpmaxs_txt_no\":\"Ne, ačiū\",\"dpmaxs_txt_ne\":\"Niekada šioje svetainėje\",\"dpmaxs_txt_popup_state\":\"HP Client Security Manager plėtinys veikia netinkamai.\",\"dpmaxs_txt_popup_infoActivate\":\"HP Client Security Manager plėtinys neveikia, nes nesuaktyvintas HP Client Security Manager papildinys.\",\"dpmaxs_txt_popup_infoMultiple\":\"HP Client Security Manager plėtinys neveikia, nes įdiegtos kelios HP Client Security Manager plėtinio versijos.\",\"dpmaxs_txt_popup_infoWrongVer\":\"HP Client Security Manager plėtinys neveikia, nes įdiegta HP Client Security Manager plėtinio versija yra nesuderinama su HP Client Security Manager papildiniu.\",\"dpmaxs_txt_popup_actOpen\":\"Jei reikia tolesnių nurodymų, atidarykite HP Client Security Manager User Console Browser Integration Page.\",\"dpmaxs_txt_popup_actRemove\":\"Turi būti įjungta tik viena HP Client Security Manager plėtinio versija. Visas kitas versijas reikia išjungti arba išdiegti.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Įtraukti į „Password Manager“"
+   },
+   "cmd_addprofile": {
+      "message": "Įtraukti prisijungimo vardą"
+   },
+   "cmd_chgpsw": {
+      "message": "Keisti slaptažodį..."
+   },
+   "cmd_editprofile": {
+      "message": "Redaguoti prisijungimo vardą"
+   },
+   "cmd_fillin": {
+      "message": "Pildyti prisijungimo duomenis"
+   },
+   "cmd_help": {
+      "message": "Žinynas"
+   },
+   "cmd_openpm": {
+      "message": "Atidaryti „Password Manager“"
+   },
+   "cmd_settings": {
+      "message": "Piktogramos nuostatos"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Ar norite, kad „Password Manager“ įsimintų {account} slaptažodį {domain} domene?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Ar norite, kad „Password Manager“ atnaujintų {account} slaptažodį {domain} domene?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Niekada šioje svetainėje"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Ne, ačiū"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Įsiminti"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Jei reikia tolesnių nurodymų, atidarykite HP Client Security Manager User Console Browser Integration Page."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Turi būti įjungta tik viena HP Client Security Manager plėtinio versija. Visas kitas versijas reikia išjungti arba išdiegti."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "HP Client Security Manager plėtinys neveikia, nes nesuaktyvintas HP Client Security Manager papildinys."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "HP Client Security Manager plėtinys neveikia, nes įdiegtos kelios HP Client Security Manager plėtinio versijos."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "HP Client Security Manager plėtinys neveikia, nes įdiegta HP Client Security Manager plėtinio versija yra nesuderinama su HP Client Security Manager papildiniu."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "HP Client Security Manager plėtinys veikia netinkamai."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Suteikia galimybę saugiai ir patogiai jungtis prie žiniatinklio svetainių"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}

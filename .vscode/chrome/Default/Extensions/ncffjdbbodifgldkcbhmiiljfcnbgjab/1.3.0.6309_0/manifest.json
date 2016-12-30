@@ -1,0 +1,32 @@
+{
+   "background": {
+      "page": "/background.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "js/jquery.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "js/codog.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extension_description__",
+   "icons": {
+      "128": "/images/exticon128.png",
+      "16": "/images/exticon16.png",
+      "48": "/images/exticon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2RrimfkEWvD6E2+97G+FcM5V8Nq44RZlCSCFSwbGR4V72b8ZwspaUc0jRzI192lgbJHB6PZxgV6y0f324lJrLZJ3/3STKRu2oOvioO0SaIAFGfoVcjJu9WsgHaADuc9jhIqJCSI/yr3oYPjkh2QxI/dVMKf13xwefpceKVz/H2wIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_extension_name__",
+   "page_action": {
+
+   },
+   "permissions": [ "tabs", "contextMenus", "http://*/*", "https://*/*" ],
+   "version": "1.3.0.6309",
+   "web_accessible_resources": [ "/images/mainbkg.png", "/images/mainimg.png", "/images/mainimg_no.png", "/images/mainimg_ok.png", "/images/mainmact.png", "/images/mainxchg.png", "/images/mainadd.png", "/images/highlighter.png", "/images/bar-bkg.png", "/images/bar-shadow.png", "/images/bar-main.png", "/images/tooltip1S.png", "/images/tooltip1L.png" ]
+}

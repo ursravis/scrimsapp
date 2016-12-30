@@ -1,0 +1,1 @@
+function pluginLoaded(){dploader.onpluginloaded()}document.addEventListener("DOMContentLoaded",function(){dploader.onhtmlloaded()});

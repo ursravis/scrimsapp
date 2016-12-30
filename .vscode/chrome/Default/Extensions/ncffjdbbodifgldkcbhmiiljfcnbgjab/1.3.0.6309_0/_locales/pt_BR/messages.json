@@ -1,0 +1,77 @@
+{
+   "all": {
+      "message": "{\"allmsg\":{\"extension_name\":\"HP Client Security Manager\",\"extension_description\":\"Fornece login seguro e conveniente a sites da Web\",\"cmd_addlogin\":\"Adicionar ao Password Manager\",\"cmd_openpm\":\"Abrir o Password Manager\",\"cmd_settings\":\"Configurações de ícones\",\"cmd_help\":\"Ajuda\",\"cmd_fillin\":\"Preencher dados de login\",\"cmd_editprofile\":\"Editar login\",\"cmd_addprofile\":\"Adicionar login\",\"cmd_chgpsw\":\"Alterar senha...\",\"dpmaxs_txt_title\":\"HP Client Security\",\"dpmaxs_txt_bodyadd\":\"Deseja que o Password Manager lembre a senha de {account} em {domain}?\",\"dpmaxs_txt_bodyupd\":\"Deseja que o Password Manager atualize a senha de {account} em {domain}?\",\"dpmaxs_txt_ok\":\"Lembrar\",\"dpmaxs_txt_no\":\"Não, obrigado\",\"dpmaxs_txt_ne\":\"Nunca para este site\",\"dpmaxs_txt_popup_state\":\"A extensão HP Client Security Manager não está funcionando adequadamente.\",\"dpmaxs_txt_popup_infoActivate\":\"A extensão HP Client Security Manager não está funcionando porque o plug-in HP Client Security Manager não foi ativado.\",\"dpmaxs_txt_popup_infoMultiple\":\"A extensão HP Client Security Manager não está funcionando porque várias versões da extensão HP Client Security Manager estão instaladas.\",\"dpmaxs_txt_popup_infoWrongVer\":\"A extensão HP Client Security Manager não está funcionando porque a versão instalada da extensão HP Client Security Manager não é compatível com o plug-in HP Client Security Manager.\",\"dpmaxs_txt_popup_actOpen\":\"Abra a Browser Integration Page do User Console do HP Client Security Manager, para mais instruções.\",\"dpmaxs_txt_popup_actRemove\":\"Somente uma versão da extensão HP Client Security Manager deve ser ativada. Todas as outras versões devem ser desativadas ou desinstaladas.\"},\"allres\":{}}"
+   },
+   "cmd_addlogin": {
+      "message": "Adicionar ao Password Manager"
+   },
+   "cmd_addprofile": {
+      "message": "Adicionar login"
+   },
+   "cmd_chgpsw": {
+      "message": "Alterar senha..."
+   },
+   "cmd_editprofile": {
+      "message": "Editar login"
+   },
+   "cmd_fillin": {
+      "message": "Preencher dados de login"
+   },
+   "cmd_help": {
+      "message": "Ajuda"
+   },
+   "cmd_openpm": {
+      "message": "Abrir o Password Manager"
+   },
+   "cmd_settings": {
+      "message": "Configurações de ícones"
+   },
+   "dpmaxs_txt_bodyadd": {
+      "message": "Deseja que o Password Manager lembre a senha de {account} em {domain}?"
+   },
+   "dpmaxs_txt_bodyupd": {
+      "message": "Deseja que o Password Manager atualize a senha de {account} em {domain}?"
+   },
+   "dpmaxs_txt_ne": {
+      "message": "Nunca para este site"
+   },
+   "dpmaxs_txt_no": {
+      "message": "Não, obrigado"
+   },
+   "dpmaxs_txt_ok": {
+      "message": "Lembrar"
+   },
+   "dpmaxs_txt_popup_actOpen": {
+      "message": "Abra a Browser Integration Page do User Console do HP Client Security Manager, para mais instruções."
+   },
+   "dpmaxs_txt_popup_actRemove": {
+      "message": "Somente uma versão da extensão HP Client Security Manager deve ser ativada. Todas as outras versões devem ser desativadas ou desinstaladas."
+   },
+   "dpmaxs_txt_popup_infoActivate": {
+      "message": "A extensão HP Client Security Manager não está funcionando porque o plug-in HP Client Security Manager não foi ativado."
+   },
+   "dpmaxs_txt_popup_infoMultiple": {
+      "message": "A extensão HP Client Security Manager não está funcionando porque várias versões da extensão HP Client Security Manager estão instaladas."
+   },
+   "dpmaxs_txt_popup_infoWrongVer": {
+      "message": "A extensão HP Client Security Manager não está funcionando porque a versão instalada da extensão HP Client Security Manager não é compatível com o plug-in HP Client Security Manager."
+   },
+   "dpmaxs_txt_popup_layout": {
+      "message": "\u003Cdiv style=\"width:300px\">\u003Cdiv id=\"dpmaxz_state\">\u003C/div>\u003Cdiv id=\"dpmaxz_fix\">\u003C/div>\u003C/div>"
+   },
+   "dpmaxs_txt_popup_msg": {
+      "message": "\u003Cdiv style=\"width:300px\">The HP Client Security Manager Chrome extension is not working properly. \u003Cbr>For the extension to function properly, check: \u003Cbr>1. HP Client Security Manager is installed. \u003Cbr>2. The HP Client Security Manager plugin is enabled.\u003Cbr>Check browser troubleshooting page in the HP Client Security Manager dashboard.\u003C/div>"
+   },
+   "dpmaxs_txt_popup_state": {
+      "message": "A extensão HP Client Security Manager não está funcionando adequadamente."
+   },
+   "dpmaxs_txt_title": {
+      "message": "HP Client Security"
+   },
+   "extension_description": {
+      "message": "Fornece login seguro e conveniente a sites da Web"
+   },
+   "extension_name": {
+      "message": "HP Client Security Manager"
+   }
+}
