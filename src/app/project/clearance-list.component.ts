@@ -31,14 +31,14 @@ export class ClearanceListComponent implements OnInit {
                 this.projectName="Test Project";
          })
 this.clearanceItemList=[];
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
-          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','New item desc',['pen','check'],false,'raviaa',null));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
+          this.clearanceItemList.push(new ClearanceItem('Item1',123,'added','item desc',['pen','check'],false,'raviaa',null,'../../assets/img/angular-logo.png'));
     }
     
 }

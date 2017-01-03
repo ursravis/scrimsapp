@@ -39,7 +39,15 @@ ngOnInit():void{
                 if(id>0)
                 {
                     this._projectService.getProject(id).subscribe(
-            project => {this.project = project;},
+            project => {this.project = project;
+                this.project.projectUniqueId="UniqueID1025";
+                this.project.workingTitle="New Feature Film";
+                this.project.releaseTitle="New release Title";
+                this.project.wprBillingCode="Test";
+                this.project.strartDate="01/01/2017";
+                this.project.productionOfficeAddress1="102015 Avenue";
+                     this.project.isPrimary=true;
+                },
             error => this.errorMessage = <any>error);
                 }
                 else{

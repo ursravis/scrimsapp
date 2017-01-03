@@ -1,12 +1,15 @@
 <div class="title-block">
     <h3 class="title">
-        {{pageTitle}}
+      Clearance Item Details
         <div class="pull-right">
-            <a class="btn btn-primary pull-right">
+             <a class="btn btn-primary pull-right" [routerLink]="['/projects',projectId,'cis']">
+                Back
+            </a>
+            <a class="btn btn-primary pull-right" style="margin-right: 5px;">
                 Save
             </a>
 
-            <a class="btn btn-primary  pull-right" style="margin-right: 5px;" [routerLink]="['/projects',projectId]"> Copy CI
+            <a class="btn btn-primary  pull-right" style="margin-right: 5px;" href=""> Copy CI
 </a>
 </div>
 </h3>
@@ -19,7 +22,7 @@
         <div class="card-header colorbordered" (click)="stepOneClick()">
             <div class="header-block">
                 <h3 class="title">
-                    Clearance Item UniqueID:
+                    Clearance Item UniqueID: #{{clearanceItem.clearanceItemUniqueId}}
                 </h3>
             </div>
             <!--<div class="header-block pull-right">
@@ -35,13 +38,13 @@
                             <div class="col-md-6 form-group required">
                                 <label class="control-label col-md-4" for="ciId">CI Name</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control boxed" id="ciId">
+                                    <input type="text" class="form-control boxed" id="ciId" [(ngModel)]="clearanceItem.clearanceItemName" name="clearanceItemName">
                                 </div>
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label>
-                            <input class="checkbox pull-right" type="checkbox">
+                            <input class="checkbox pull-right" type="checkbox" [(ngModel)]="clearanceItem.createdByProduction" name="createdByProduction">
                             <span>Created By Production</span>
                         </label>
                             </div>
@@ -50,7 +53,7 @@
                             <div class="col-md-12 form-group">
                                 <label class="control-label col-md-2" for="quickDescription">Quick Description</label>
                                 <div class="col-md-10">
-                                    <textarea rows="2" class="form-control boxed" id="quickDescription"></textarea>
+                                    <textarea rows="2" class="form-control boxed" id="quickDescription" [(ngModel)]="clearanceItem.description" name="description"></textarea>
                                 </div>
                             </div>
 
@@ -59,7 +62,7 @@
                             <div class="col-md-12 form-group">
                                 <label class="control-label col-md-2" for="descrOfUse">Description of Use</label>
                                 <div class="col-md-10">
-                                    <textarea rows="3" class="form-control boxed" id="descrOfUse"></textarea>
+                                    <textarea rows="3" class="form-control boxed" id="descrOfUse" [(ngModel)]="clearanceItem.useDescription" name="useDescription"></textarea>
                                 </div>
                             </div>
 
@@ -87,19 +90,19 @@
                             <div class="col-md-6 form-group">
                                 <label class="control-label col-md-4" for="createdDate">Created Date</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control boxed" id="createdDate">
+                                    <input type="text" class="form-control boxed" id="createdDate" [(ngModel)]="clearanceItem.createdDate" name="createdDate">
                                 </div>
                             </div>
                             <div class="col-md-6 form-group ">
                                 <label class="control-label col-md-4" for="createdBy">Created By</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control boxed" id="createdBy">
+                                    <input type="text" class="form-control boxed" id="createdBy" [(ngModel)]="clearanceItem.createdBy" name="createdBy">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right">
+                                <button type="submit" class="btn btn-primary pull-right" (click)="stepOneNextClick()">
                             Next
                         </button>
                             </div>
@@ -189,10 +192,10 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
+                        <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;" (click)="stepTwoNextClick()"> Next
                      </button>
 
-                <button type="submit" class="btn btn-primary pull-right">
+                <button type="submit" class="btn btn-primary pull-right" (click)="stepTwoPrevClick()">
                                     Prev
                                 </button>
 
@@ -341,10 +344,10 @@
                          
 <div class="row">
             <div class="col-md-12">
-                <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
+                <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;" (click)="stepThreeNextClick()"> Next
         </button>
 
-        <button type="submit" class="btn btn-primary pull-right">
+        <button type="submit" class="btn btn-primary pull-right" (click)="stepThreePrevClick()">
                             Prev
                         </button>
 
@@ -498,10 +501,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
-                     </button>
+                        
 
-                <button type="submit" class="btn btn-primary pull-right">
+                <button type="submit" class="btn btn-primary pull-right"(click)="stepFourPrevClick()">
                                     Prev
                                 </button>
 

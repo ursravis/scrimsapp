@@ -18,6 +18,213 @@ $card-padding-x-sm: 10px !default;
 *		  Item List general styles
 ********************************************** */
 
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    line-height: $item-list-line-height;
+    @include media(lg) {
+        font-size: 1rem;
+    }
+    @include media(md) {
+        font-size: 0.95rem;
+    }
+    @include media-down(sm) {
+        font-size: 1.05rem;
+    }
+    display: flex;
+    flex-flow: column nowrap;
+    &.striped {
+        & > li {
+            border-bottom: 1px solid $item-list-color-border;
+        }
+        & > li:nth-child(2n + 1) {
+            background-color: lighten($color-divider, 12%);
+            @include media-down(sm) {
+                background-color: lighten($color-divider, 11%);
+            }
+        }
+        .item-list-footer {
+            border-bottom: none;
+        }
+    }
+}
+/* *******************************************
+*			Item general styles
+********************************************** */
+
+.item-list {
+    .item {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-row {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-width: 100%;
+        &.nowrap {
+            flex-wrap: nowrap;
+        }
+    }
+    .item-col {
+        align-items: center;
+        display: flex;
+        padding: $item-list-padding-y $item-list-padding-x $item-list-padding-y 0;
+        flex-basis: 0;
+        flex-grow: $item-list-col-grow;
+        flex-shrink: $item-list-col-shrink;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 0;
+        &.fixed {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+        &.pull-left {
+            margin-right: auto;
+        }
+        &.pull-right {
+            margin-left: auto;
+        }
+        & > div {
+            width: 100%;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    .no-overflow {
+        overflow: hidden;
+    }
+    .no-wrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+/* *******************************************
+*				Item components
+********************************************** */
+
+.item-list {
+    /********************************************
+	*					Header
+	*********************************************/
+    
+    .item-list-header {
+        .item-col.item-col-header {
+            span {
+                color: #999;
+                font-size: 0.8rem;
+                font-weight: 700 !important;
+            }
+        }
+    }
+    /********************************************
+	*					Heading
+	*********************************************/
+    
+    .item-heading {
+        font-size: 0.9rem;
+        display: none;
+        color: #666;
+        font-weight: 700;
+        padding-right: $item-list-padding-x;
+        @include media-down(sm) {
+            display: block;
+        }
+        @include media(sm) {
+            width: 100%;
+        }
+        @include media(xs) {
+            width: 40%;
+        }
+    }
+ 
+    /********************************************
+	*					Image
+	*********************************************/
+    
+    .item-col.item-col-img1 {
+        display: flex;
+        flex-basis: 60px + $item-list-padding-x;
+        &.xs {
+            flex-basis: 30px + $item-list-padding-x;
+        }
+        &.sm {
+            flex-basis: 40px + $item-list-padding-x;
+        }
+        &.lg {
+            flex-basis: 90px + $item-list-padding-x;
+        }
+        &.xl {
+            flex-basis: 110px + $item-list-padding-x;
+        }
+        a {
+            width: 100%;
+            // display: flex;
+        }
+    }
+    .item-img {
+        flex-grow: 1;
+        align-self: stretch;
+        background-color: #efefef;
+        padding-bottom: 100%;
+        width: 100%;
+        height: 0;
+        @include bg-cover();
+    }
+    /********************************************
+	*					Title
+	*********************************************/
+    
+    .item-col.item-col-title {
+        @include media-down(sm) {
+            order: -4;
+        }
+        a {
+            display: block;
+        }
+    }
+    .item-title {
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: 600;
+    }
+    /********************************************
+	*					Stats
+	*********************************************/
+    
+    .item-status {
+        height: $item-list-line-height;
+    }
+  
+    /********************************************
+	*			   Something else?
+	*********************************************/
+}
+/* *******************************************
+*				Adjustments
+********************************************** */
+
+// Item which is located inside card inside item-list
+.card > .item-list .item > .item-row {
+    padding: 0 $card-padding-x;
+    @include media(xl) {
+        padding: 0 $card-padding-x-xl;
+    }
+    @include media-down(sm) {
+        padding: 0 $card-padding-x-sm;
+    }
+}
+
 .items-list-page {
 
 	.title-search-block {
@@ -82,7 +289,7 @@ $card-padding-x-sm: 10px !default;
 				// flex-basis: 30px;
 			}
 
-			&.item-col-img {
+			&.item-col-img1 {
 				text-align: left;
 				width: auto;
 				text-align: center;
@@ -101,12 +308,12 @@ $card-padding-x-sm: 10px !default;
 				margin-right: auto;
 				// flex-basis: calc(40% - 100px);
 				flex-basis: 0;
-				flex-grow: 3 * $item-list-col-grow;
+				flex-grow: 2 * $item-list-col-grow;
 			}
 
 			&.item-col-desc {
 				text-align: center;
-				font-weight: 600;
+			
 			}
 
 			&.item-col-status {
@@ -114,12 +321,12 @@ $card-padding-x-sm: 10px !default;
 			}
 
 			&.item-col-tags {
-				text-align: left;
-				font-weight: 600;
+				text-align: center;
 			}
 
 			&.item-col-release {
-				text-align: left;
+				text-align: center;
+
 				flex-grow: 1.5 * $item-list-col-grow;
 			}
 
@@ -182,14 +389,13 @@ $card-padding-x-sm: 10px !default;
 				top: 0;
 				width: 100%;
 				left: 0;
-				line-height: 40px;
+				line-height: 100px;
 				padding-left: 0;
 			}
 
 			.item-col {
-				&.item-col-check,
-				&.item-col-title,
-				&.item-col-actions-dropdown {
+				&.item-col-title
+			 {
 					border-bottom: 1px solid $color-divider;
 
 					.item-heading {
@@ -198,18 +404,16 @@ $card-padding-x-sm: 10px !default;
 				}
 
 				&.item-col-desc,
-				&.item-col-status,
+				
 				&.item-col-tags,
-				&.item-col-release,
-				&.item-col-date {
+				&.item-col-release
+				{
 					padding-top: 40px;
 					position: relative;
 				}
 
 
-				&.item-col-check {
-					display: none;
-				}
+			
 
 				&.item-col-title {
 					padding-left: $item-list-padding-x;
@@ -220,24 +424,20 @@ $card-padding-x-sm: 10px !default;
 				}
 
 
-				&.item-col-actions {
-					
-				}
+			
 
-				&.item-col-img {
+				&.item-col-status,&.item-col-img1 {
+					text-align: center;
 					padding-left: $item-list-padding-x;
 					flex-basis: 69px + $item-list-padding-x;
 				}
 
 
 				&.item-col-desc {
-					text-align: left;
-				}
-
-				&.item-col-status {
 					text-align: center;
 				}
 
+				
 				&.item-col-tags {
 					text-align: center;
 				}
@@ -246,14 +446,7 @@ $card-padding-x-sm: 10px !default;
 					text-align: center;
 				}
 
-				&.item-col-date {
-					padding-right: $item-list-padding-x;
-					text-align: right;
-					white-space: nowrap;
-					flex-basis: 100px;
-					flex-basis: 0;
-					flex-grow: $item-list-col-grow;
-				}		
+				
 			}
 
 		}
@@ -285,11 +478,11 @@ $card-padding-x-sm: 10px !default;
 					display: none;
 				}
 
-				&.item-col-img {
-					.item-img {
-						padding-bottom: 65%;
-					}
-				}
+				// &.item-col-img1 {
+				// 	.item-img {
+				// 		padding-bottom: 65%;
+				// 	}
+				// }
 
 				&.item-col-title {
 					text-align: left;
@@ -308,10 +501,7 @@ $card-padding-x-sm: 10px !default;
 					}
 				}
 
-				&.item-col-actions-dropdown {
-					border: none;
-					padding-bottom: 0;
-				}
+				
 
 				&.item-col-desc {
 					text-align: left;
@@ -329,9 +519,7 @@ $card-padding-x-sm: 10px !default;
 					text-align: left;
 				}
 
-				&.item-col-date {
-					text-align: left;
-				}
+			
 
 				
 			}

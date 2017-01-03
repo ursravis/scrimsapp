@@ -1,14 +1,22 @@
 <div class="title-block">
     <h3 class="title">
-        Project Details<div class="pull-right">
-                <a class="btn btn-primary pull-right">
+        <div class="col-md-4">
+        Project Details   #{{project.projectUniqueId}}
+      </div>  <div class="col-md-4"></div>
+          <div class="col-md-4">
+           
+
+            <a class="btn btn-primary" style="margin-right: 5px;" [routerLink]="['/projects',project.projectId,'cis']">
+               Clearance Items
+            </a>
+             
+                <a class="btn btn-primary" style="margin-right: 5px;">
                 Save
             </a>
-
-            <a class="btn btn-primary  pull-right" style="margin-right: 5px;" [routerLink]="['/projects',project.projectId,'cis']">
-                Items
+             <a class="btn btn-primary" [routerLink]="['/projects']">
+                Back
             </a>
-            </div>
+         </div>
     </h3>
     
 </div>
@@ -20,13 +28,13 @@
                 <div class="col-md-6 form-group required">
                     <label class="control-label col-md-4" for="workingTitle">Working Title</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control boxed" id="workingTitle">
+                        <input type="text" class="form-control boxed" id="workingTitle" [(ngModel)]="project.workingTitle" name="workingTitle">
                     </div>
                 </div>
                 <div class="col-md-6 form-group required">
-                    <label class="control-label col-md-4" for="releaseTitel">Release Title</label>
+                    <label class="control-label col-md-4" for="releaseTitel" >Release Title</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control boxed" id="releaseTitel">
+                        <input type="text" class="form-control boxed" id="releaseTitel" [(ngModel)]="project.releaseTitle" name="releaseTitle">
                     </div>
                 </div>
             </div>
@@ -34,13 +42,13 @@
                 <div class="col-md-6 form-group">
                     <label class="control-label col-md-4" for="WPRBillingCode">WPR BillingCode</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control boxed" id="WPRBillingCode">
+                        <input type="text" class="form-control boxed" id="WPRBillingCode" [(ngModel)]="project.wprBillingCode" name="wprBillingCode">
                     </div>
                 </div>
                 <div class="col-md-6 form-group ">
-                    <label class="control-label col-md-4" for="StartDate">Start Date</label>
+                    <label class="control-label col-md-4" for="StartDate" >Start Date</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control boxed" id="StartDate">
+                        <input type="text" class="form-control boxed" id="StartDate" [(ngModel)]="project.strartDate" name="strartDate">
                     </div>
                 </div>
             </div>
@@ -75,7 +83,7 @@
             <div class="header-block pull-right">
 
                 <label>
-                    <input class="checkbox pull-right" type="checkbox">
+                    <input class="checkbox pull-right" type="checkbox" [(ngModel)]="project.isPrimary" name="isPrimary">
                     <span>Primary</span>
                 </label>
             </div>
@@ -98,7 +106,7 @@
                     <div class="col-md-12 form-group ">
                         <label class="control-label col-md-4" for="address1">Address1</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control boxed" id="address1">
+                            <input type="text" class="form-control boxed" id="address1" [(ngModel)]="project.productionOfficeAddress1" name="productionOfficeAddress1">
                         </div>
                     </div>
                 </div>

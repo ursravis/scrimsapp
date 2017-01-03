@@ -9,6 +9,11 @@ export class ClearanceItem{
     releaseAdded:boolean;
     createdBy:string;
     images:ClearanceImage[];
+    clearanceItemUniqueId:string;
+    createdByProduction:boolean;
+    createdDate:string;
+    imageUrl:string;
+
     
 constructor(clearanceItemName:string,
     clearanceItemID:number,
@@ -17,7 +22,7 @@ constructor(clearanceItemName:string,
     tags:string[],
     releaseAdded:boolean,
     createdBy:string,
-    images:ClearanceImage[])
+    images:ClearanceImage[],imageUrl:string)
 {
     this.clearanceItemName=clearanceItemName;
     this.clearanceItemID=clearanceItemID;
@@ -27,6 +32,7 @@ constructor(clearanceItemName:string,
     this.releaseAdded=releaseAdded;
     this.createdBy=createdBy;
     this.images=images;
+    this.imageUrl=imageUrl;
 
 }
 }
