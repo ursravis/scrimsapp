@@ -18,11 +18,11 @@ import '@angular/router';
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-
 import 'jquery';
 import 'bootstrap-loader';
-import 'font-awesome-sass-loader';
 import 'ng2-dragula';
+import 'chart.js';
+
 
 import './app/infra/theme-helper.js';
 if ('production' === ENV) {

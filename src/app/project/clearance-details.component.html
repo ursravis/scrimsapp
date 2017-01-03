@@ -1,0 +1,508 @@
+<div class="title-block">
+    <h3 class="title">
+        {{pageTitle}}
+        <div class="pull-right">
+            <a class="btn btn-primary pull-right">
+                Save
+            </a>
+
+            <a class="btn btn-primary  pull-right" style="margin-right: 5px;" [routerLink]="['/projects',projectId]"> Copy CI
+</a>
+</div>
+</h3>
+
+</div>
+
+
+<div class="col-md-12">
+    <div class="card sameheight-item">
+        <div class="card-header colorbordered" (click)="stepOneClick()">
+            <div class="header-block">
+                <h3 class="title">
+                    Clearance Item UniqueID:
+                </h3>
+            </div>
+            <!--<div class="header-block pull-right">
+                <a href="" class="btn btn-primary btn-sm rounded pull-right">
+                Add new
+            </a>
+            </div>-->
+        </div>
+                <div id="stepOne" class="card-block">
+
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 form-group required">
+                                <label class="control-label col-md-4" for="ciId">CI Name</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control boxed" id="ciId">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>
+                            <input class="checkbox pull-right" type="checkbox">
+                            <span>Created By Production</span>
+                        </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label class="control-label col-md-2" for="quickDescription">Quick Description</label>
+                                <div class="col-md-10">
+                                    <textarea rows="2" class="form-control boxed" id="quickDescription"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label class="control-label col-md-2" for="descrOfUse">Description of Use</label>
+                                <div class="col-md-10">
+                                    <textarea rows="3" class="form-control boxed" id="descrOfUse"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label col-md-4" for="status">Status</label>
+                                <div class="col-md-8">
+                                    <select class="c-select form-control boxed">
+                                    <option selected>Select Status</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group ">
+                                <label class="control-label col-md-4" for="ReviewQueue">Review Queue</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control boxed" id="ReviewQueue">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label class="control-label col-md-4" for="createdDate">Created Date</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control boxed" id="createdDate">
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group ">
+                                <label class="control-label col-md-4" for="createdBy">Created By</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control boxed" id="createdBy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right">
+                            Next
+                        </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+      
+    </div>
+</div>
+
+
+<div class="col-md-12">
+    <div class="card sameheight-item">
+        <div class="card-header colorbordered" (click)="stepTwoClick()">
+            <div class="header-block">
+                <h3 class="title">
+                    Refference Details
+                </h3>
+            </div>
+            <!--<div class="header-block pull-right">
+                <a href="" class="btn btn-primary btn-sm rounded pull-right">
+                Add new
+            </a>
+            </div>-->
+        </div>
+
+
+        <div class="card-block" id="stepTwo" style="display: none;">
+
+            <form>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label class="control-label col-md-4" for="shootDate">Shoot/Due Date</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control boxed" id="shootDate">
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group ">
+                        <label class="control-label col-md-4" for="sceneNumber">Scene Number</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control boxed" id="sceneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label class="control-label col-md-4" for="submittingDept">Submitting Dept</label>
+                        <div class="col-md-8">
+                            <select class="c-select form-control boxed" id="submittingDept">
+                            <option selected>Select Status</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group ">
+                        <label class="control-label col-md-4" for="ArtistName">Artist/Author Name</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control boxed" id="ArtistName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="control-label col-md-2" for="copyRightInfo">Copyright Info</label>
+                        <div class="col-md-10">
+                            <textarea rows="2" class="form-control boxed" id="copyRightInfo"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="control-label col-md-2" for="urlRefference">URL Refference</label>
+                        <div class="col-md-10">
+                            <textarea rows="2" class="form-control boxed" id="urlRefference"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
+                     </button>
+
+                <button type="submit" class="btn btn-primary pull-right">
+                                    Prev
+                                </button>
+
+</div>
+
+</div>
+
+</form>
+
+
+</div>
+</div>
+</div>
+
+<div class="col-md-12">
+    <div class="card sameheight-item">
+        <div class="card-header colorbordered" (click)="stepThreeClick()">
+            <div class="header-block">
+                <h3 class="title">
+                    Images
+                </h3>
+            </div>
+            <!--<div class="header-block pull-right">
+                <a href="" class="btn btn-primary btn-sm rounded pull-right">
+                Add new
+            </a>
+            </div>-->
+        </div>
+
+
+        <div class="card-block"  id="stepThree" style="display: none;">
+
+            <form>
+                <div class="row">
+                    <label class="col-md-2 form-control-label">
+                        Images:
+                    </label>
+                    <div class="col-md-10">
+                        <div class="images-container">
+                            <div class="image-container" *ngFor='let imageData of clearanceItem.images'>
+                                <div class="controls">
+                                    <a href="" class="control-btn move">
+                                        <i class="fa fa-arrows"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="" class="control-btn star">
+                                        <i class="fa"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+
+
+                                <div class="image" style="background-image:url('{{imageData.thumbnailSrc}}')"></div>
+                            </div>
+
+                            <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                                <div class="image-container new">
+                                    <div class="image">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                    </div>
+                </div>
+                    <div class="row">
+                    <label class="col-md-2 form-control-label">
+                        Refference Images:
+                    </label>
+                    <div class="col-md-10">
+                        <div class="images-container">
+                            <div class="image-container" *ngFor='let imageData of clearanceItem.images'>
+                                <div class="controls">
+                                    <a href="" class="control-btn move">
+                                        <i class="fa fa-arrows"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="" class="control-btn star">
+                                        <i class="fa"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+
+
+                                <div class="image" style="background-image:url('{{imageData.thumbnailSrc}}')"></div>
+                            </div>
+
+                            <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                                <div class="image-container new">
+                                    <div class="image">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                    </div>
+                </div>
+
+                      <div class="row">
+                    <label class="col-md-2 form-control-label">
+                        Release Documents:
+                    </label>
+                    <div class="col-md-10">
+                        <div class="images-container">
+                            <div class="image-container" *ngFor='let imageData of clearanceItem.images'>
+                                <div class="controls">
+                                    <a href="" class="control-btn move">
+                                        <i class="fa fa-arrows"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="" class="control-btn star">
+                                        <i class="fa"></i>
+                                    </a>
+                                    <!--
+								-->
+                                    <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+
+
+                                <div class="image" style="background-image:url('{{imageData.thumbnailSrc}}')"></div>
+                            </div>
+
+                            <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                                <div class="image-container new">
+                                    <div class="image">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                    </div>
+                </div>
+                         
+<div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
+        </button>
+
+        <button type="submit" class="btn btn-primary pull-right">
+                            Prev
+                        </button>
+
+</div>
+
+</div>
+
+</form>
+
+
+</div>
+</div>
+</div>
+
+<div class="col-md-12">
+    <div class="card sameheight-item">
+        <div class="card-header colorbordered" (click)="stepFourClick()">
+            <div class="header-block">
+                <h3 class="title">
+                    Tags & Notes
+                </h3>
+            </div>
+            <!--<div class="header-block pull-right">
+                <a href="" class="btn btn-primary btn-sm rounded pull-right">
+                Add new
+            </a>
+            </div>-->
+        </div>
+
+
+        <div class="card-block"  id="stepFour" style="display: none;">
+
+            <form>
+           
+           
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="control-label col-md-2" for="notes">Notes</label>
+                        <div class="col-md-10">
+                            <textarea rows="2" class="form-control boxed" id="notes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label class="control-label col-md-2" for="tags">Tags</label>
+                        <div class="col-md-10">
+                            <textarea rows="2" class="form-control boxed" id="tags"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                  <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Advertise/Publication </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>End Credit </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Fees Flag </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Cast List </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+             
+                 <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Home Entertainment </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Post Production</span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                    <div class="col-md-10 form-group pull-right">
+                        <label class="col-md-4" >
+                            <input class="checkbox" type="checkbox">
+                             <span>Clip </span>
+                             </label>
+                        <div class="col-md-8">
+                            <textarea rows="2" class="form-control boxed" id="aNotes"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" style="margin-left: 5px;"> Next
+                     </button>
+
+                <button type="submit" class="btn btn-primary pull-right">
+                                    Prev
+                                </button>
+
+</div>

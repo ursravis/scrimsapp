@@ -16,7 +16,8 @@ import { UserService } from './shared/index';
   styleUrls: [
     './app.component.css',
       '../assets/css/modular-vendor.css',
-    '../assets/css/modular-admin.css'
+    '../assets/css/modular-admin.css',
+    '../assets/css/toggle-switch.css'
    
 
   ],

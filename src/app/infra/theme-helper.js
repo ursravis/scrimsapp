@@ -15,6 +15,10 @@ $(function () {
 	
 });
 
+$(function() {
+
+
+
     function drawItemsListSparklines(){
         $(".items-list-page .sparkline").each(function() {
             var type = $(this).data('type');
@@ -34,3 +38,5 @@ $(function () {
     }
 
     drawItemsListSparklines();
+
+});

@@ -1,4 +1,4 @@
-export class SmartImage{
+export class ClearanceImage{
 imageSrc:string;
 imageName:string;
 imageType:string;

@@ -1,8 +1,8 @@
 
 import {Component,OnInit,OnDestroy,ElementRef} from '@angular/core'; 
 import {ActivatedRoute,Router} from '@angular/router';
-import {IProject} from './project';
-import {SmartImage} from './SmartImage';
+import {Project} from './project';
+import {ClearanceImage} from './clearance-image';
 import {ProjectService} from './project.service';
 import { Subscription }       from 'rxjs/Subscription';
 
@@ -16,7 +16,7 @@ import { Subscription }       from 'rxjs/Subscription';
     styleUrls: ['./project-details.component.css']})
 export class ProjectDetailsComponent implements OnInit,OnDestroy {
     pageTitle:string='Project Details';
-    project:IProject;
+    project:Project;
     croppedImageSrc : any;
     showSelectedImage: boolean=false;
     selectedImageSrc: string;
@@ -32,7 +32,7 @@ export class ProjectDetailsComponent implements OnInit,OnDestroy {
 
     }
 ngOnInit():void{
-    this.project=new IProject();
+    this.project=new Project();
      this.sub = this._route.params.subscribe(
             params => {
                 let id = +params['id'];
@@ -45,7 +45,7 @@ ngOnInit():void{
                 else{
                     this.project.projectId=-1;
                     this.project.projectName="New Project";
-                     this.project.images=[];
+                
 
                 }
         });
@@ -131,7 +131,7 @@ onCropClick():void{
 }
 onShowCropped(): void{
          this.croppedImageSrc=  this.cropper.getCroppedCanvas().toDataURL();
-          this.project.filesSrc.push(this.croppedImageSrc);
+          //this.project.filesSrc.push(this.croppedImageSrc);
           document.getElementById("openModalButton").click();
              //let editedImage = this.elementRef.nativeElement.querySelector('#croppedImage');
              //editedImage.src=this.croppedImageSrc;
@@ -209,13 +209,13 @@ this.disableEdits=true;
                 // Resize the image
                 //var resized_img = this.resize(img);
                 var thumbNail=this.createThumbnail(img,64,file.type);
-                var imageData=new SmartImage();
+                var imageData=new ClearanceImage();
                 imageData.thumbnailSrc=thumbNail;
                 imageData.imageSrc=event.target.result;
                 imageData.imageName=file.name;
                 imageData.imageType=file.type;
                 // Push the img src (base64 string) into our array that we display in our html template
-                this.project.images.push(imageData);
+                //this.project.images.push(imageData);
             }, false);
 
             reader.readAsDataURL(files[i]);

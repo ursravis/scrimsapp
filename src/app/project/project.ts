@@ -1,13 +1,12 @@
-import {SmartImage} from './SmartImage';
-export class IProject{
+
+export class Project{
     projectName:string;
     projectId:number;
-    totalCICount:number=5;
-      reviewQueueCount:number=3;
-    filesSrc:string[];
-    noOfImages:number;
-    createdBy:string;
-    images:SmartImage[];
+    totalCICount:number;
+    reviewQueueCount:number;
+    statusValues:number[];
+    statusNames:string[];
+
 constructor()
 {
     

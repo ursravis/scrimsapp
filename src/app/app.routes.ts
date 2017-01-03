@@ -8,10 +8,10 @@ import { LoggedInGuard ,AdminGuard} from './shared/index';
 import { LoginComponent } from './login/index';
 
 export const ROUTES: Routes = [
-  { path: '', component: HomeComponent, canActivate: [LoggedInGuard] },
+  { path: '',redirectTo:'projects',pathMatch:'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'projects', loadChildren: './project/project.module#ProjectModule?', canLoad: [LoggedInGuard] },
-  { path: 'todolist', loadChildren: './todolist/todolist.module#TodolistModule', canLoad: [AdminGuard] },
+  { path: 'projects', loadChildren: './project/project.module#ProjectModule?'},//, canLoad: [LoggedInGuard] },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},//, canLoad: [AdminGuard] },
   // {
   //   path: 'detail', loadChildren: () => System.import('./+detail')
   //     .then((comp: any) => comp.default)
