@@ -26,7 +26,8 @@ export class ErrorLogService {
 	public logError(error: any): void {
 
 		if ('production' === ENV) {
-			this.sendToServer(error);
+			//this.sendToServer(error);
+			this.sendToConsole(error);
 
 		}
 		else {

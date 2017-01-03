@@ -18,7 +18,10 @@ export class ProjectListComponent implements OnInit {
   public pieChartType:string = 'pie';
 
     constructor(private _productService: ProjectService,private userService: UserService) {
- this.pageTitle = 'Project List : ' + userService.loggedInUser.firstName+' '+userService.loggedInUser.lastName;
+        // if(userService.loggedInUser != null)
+        // {
+        //     this.pageTitle = 'Project List : ' + userService.loggedInUser.firstName+' '+userService.loggedInUser.lastName;
+        // }
 
     }
 
