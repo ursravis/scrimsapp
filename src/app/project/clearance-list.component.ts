@@ -7,6 +7,7 @@ import { Subscription }       from 'rxjs/Subscription';
 import {ActivatedRoute,Router} from '@angular/router';
 
 @Component({
+    selector:'clearance-list',
     templateUrl: './clearance-list.component.html',
     styles: [require('./ci-list.scss').toString()]
 })

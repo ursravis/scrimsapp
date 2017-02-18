@@ -1,200 +1,184 @@
 <div class="items-list-page">
-	<div class="title-search-block">
-		<div class="title-block">
-			<div class="row">
-				<div class="col-md-6">
-					<h3 class="title">
-					Clearance Items Of {{projectName}}
 
-				</h3>
-				</div>
-		<div class="col-md-6">
-			<a class="btn btn-primary rounded" style="margin-right: 5px;" [routerLink]="['/projects',projectId]"> Project Header</a>
-						<a href="" class="btn btn-primary rounded" style="margin-right: 5px;"> Add CI</a>
-				<div class="items-search">
-					<form class="form-inline">
-						
-						<div class="input-group">
-							<input type="text" class="form-control boxed rounded-s" placeholder="Search for...">
-								<span class="input-group-btn">
-									<button class="btn btn-secondary rounded-s" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
-					</div>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+<div class="col-md-3 form-group ">
+<div class="items-search">
+	<form class="form-inline">
+
+		<div class="input-group">
+			<input type="text" class="form-control boxed rounded-s" placeholder="Search for...">
+			<span class="input-group-btn">
+										<button class="btn btn-secondary rounded-s" type="button">
+											<i class="fa fa-search"></i>
+										</button>
+									</span>
 		</div>
-		<div class="row" >
-			<div class="col-md-12" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-			<div class="col-md-4 form-group">
-				<label class="control-label col-md-4" style="text-align: center;" for="order">Order By:</label>
-				<div class="col-md-8">
-					<select class="c-select form-control boxed" id="order">
+	</form>
+</div>
+</div>
+<div class="col-md-3 form-group">
+
+	<select class="c-select form-control boxed" id="order">
 						<option selected >Select Column</option>
 						<option value="1">ID</option>
 						<option value="2">Name</option>
 						<option value="3">Release</option>
 					</select>
-				</div>
-			</div>
-			
-			<div class="col-md-4 form-group ">
-				<label class="control-label col-md-4" for="status">CI Status:</label>
-				<div class="col-md-8">
-					<select class="c-select form-control boxed">
+
+</div>
+
+<div class="col-md-3 form-group ">
+
+	<select class="c-select form-control boxed">
 						<option selected>View All</option>
 						<option value="1">Created</option>
 						<option value="2">Cleared</option>
 						<option value="3">Approved</option>
 					</select>
+
+</div>
+<div class="col-md-3 switch-toggle well " style="height: 35px; ">
+<input id="week" name="view" type="radio" checked>
+<label for="week" onclick="">All Items</label>
+
+<input id="month" name="view" type="radio">
+<label for="month" onclick="">Review Items</label>
+
+<a class="btn btn-primary btn-sm"></a>
+</div>
+
+</div>
+</div>
+<div class="card items col-md-12">
+	<ul class="item-list striped">
+		<li class="item item-list-header hidden-sm-down">
+			<div class="item-row">
+				<div class="item-col item-col-header item-col-title">
+					<div>
+						<span>CI Name</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-status">
+					<div class="no-overflow">
+						<span>Status</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-desc">
+					<div class="no-overflow">
+						<span>CI Description</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-desc">
+					<div class="no-overflow">
+						<span>Description Of Use</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-tags">
+					<div class="no-overflow">
+						<span>Tags</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header item-col-release">
+					<div class="no-overflow">
+						<span>Release Added</span>
+					</div>
+				</div>
+				<div class="item-col item-col-header fixed item-col-img1 md">
+					<div>
+						<span>Images</span>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-1 "></div>
-			<div class="col-md-3 switch-toggle well "  style="height: 35px; ">
-					<input id="week" name="view" type="radio" checked>
-					<label for="week" onclick="">All Items</label>
-
-					<input id="month" name="view" type="radio">
-					<label for="month" onclick="">Review Items</label>
-
-					<a class="btn btn-primary btn-sm rounded" ></a>
-					</div>
-			
-		</div>
-		</div>
-		<div class="card items col-md-12">
-			<ul class="item-list striped">
-				<li class="item item-list-header hidden-sm-down">
-					<div class="item-row">
-						<div class="item-col item-col-header item-col-title">
-							<div>
-								<span>CI Name</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header item-col-status">
-							<div class="no-overflow">
-								<span>Status</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header item-col-desc">
-							<div class="no-overflow">
-								<span>CI Description</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header item-col-desc">
-							<div class="no-overflow">
-								<span>Description Of Use</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header item-col-tags">
-							<div class="no-overflow">
-								<span>Tags</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header item-col-release">
-							<div class="no-overflow">
-								<span>Release Added</span>
-							</div>
-						</div>
-						<div class="item-col item-col-header fixed item-col-img1 md">
-							<div>
-								<span>Images</span>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="item" *ngFor='let ci of clearanceItemList '>
-					<div class="item-row">
-						<div class="item-col fixed pull-left item-col-title">
-							<div class="item-heading">Name</div>
-							<div>
-								<a [routerLink]="['/projects',projectID,'cis', ci.clearanceItemID]" class="">
-									<h4 class="item-title">
+		</li>
+		<li class="item" *ngFor='let ci of clearanceItemList '>
+			<div class="item-row">
+				<div class="item-col fixed pull-left item-col-title">
+					<div class="item-heading">Name</div>
+					<div>
+						<a [routerLink]="['/projects',projectID,'cis', ci.clearanceItemID]" class="">
+							<h4 class="item-title">
 								#{{ci.clearanceItemID}} {{ci.clearanceItemName}}
 							</h4>
-								</a>
-							</div>
-						</div>
-						<div class="item-col item-col-status no-overflow">
-							<div class="item-heading">Status</div>
-							<div class="no-overflow">
+						</a>
+					</div>
+				</div>
+				<div class="item-col item-col-status no-overflow">
+					<div class="item-heading">Status</div>
+					<div class="no-overflow">
 						{{ci.status}}
 					</div>
-						</div>
-						<div class="item-col item-col-desc no-overflow">
-							<div class="item-heading">CI Description</div>
-							<div class="no-overflow">
+				</div>
+				<div class="item-col item-col-desc no-overflow">
+					<div class="item-heading">CI Description</div>
+					<div class="no-overflow">
 						{{ci.description}}
 					</div>
-						</div>
-						<div class="item-col item-col-desc no-overflow">
-							<div class="item-heading">Description of Use</div>
-							<div class="no-overflow">
+				</div>
+				<div class="item-col item-col-desc no-overflow">
+					<div class="item-heading">Description of Use</div>
+					<div class="no-overflow">
 						{{ci.useDescription}}
 					</div>
-						</div>
-						<div class="item-col item-col-tags no-overflow">
-							<div class="item-heading">Tags</div>
-							<div class="no-overflow">
+				</div>
+				<div class="item-col item-col-tags no-overflow">
+					<div class="item-heading">Tags</div>
+					<div class="no-overflow">
 						{{ci.tags}}
 					</div>
-						</div>
-						<div class="item-col item-col-release no-overflow">
-							<div class="item-heading">Release Added</div>
-							<div class="no-overflow">
+				</div>
+				<div class="item-col item-col-release no-overflow">
+					<div class="item-heading">Release Added</div>
+					<div class="no-overflow">
 						{{ci.releaseAdded}}
 					</div>
-						</div>
-						<div class="item-col fixed item-col-img1 md">
-							<a href="item-editor.html">
+				</div>
+				<div class="item-col fixed item-col-img1 md">
+					<a href="item-editor.html">
 								<div class="item-img rounded" style="background-image: url({{ci.imageUrl}})"></div>
-							</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<nav class="text-xs-right">
-			<ul class="pagination">
-				<li class="page-item">
-					<a class="page-link" href="">
+</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<nav class="text-xs-right">
+	<ul class="pagination">
+		<li class="page-item">
+			<a class="page-link" href="">
 				Prev
 			</a>
-				</li>
-				<li class="page-item active">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item active">
+			<a class="page-link" href="">
 				1
 			</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
 				2
 			</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
 				3
 			</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
 				4
 			</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
 				5
 			</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="">
+		</li>
+		<li class="page-item">
+			<a class="page-link" href="">
 				Next
 			</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
+		</li>
+	</ul>
+</nav>
+</div>

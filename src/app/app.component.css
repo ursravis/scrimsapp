@@ -90,6 +90,8 @@ div.panel-heading {
   content:"*";
   color:red;
 }
+   .card .card-header.colorbordered {
+      border-bottom: 1px solid #85CE36; }
  
 
  

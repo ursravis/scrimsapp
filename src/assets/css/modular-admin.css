@@ -666,10 +666,7 @@ body {
       display: table;
       clear: both; }
     .card .card-header.bordered {
-      border-bottom: 1px solid #d7dde4; }
-       .card .card-header.colorbordered {
-      border-bottom: 1px solid #85CE36; }
-      
+      border-bottom: 1px solid #d7dde4; }  
     .card .card-header.card-header-sm {
       min-height: 40px; }
     .card .card-header > span {

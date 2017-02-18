@@ -14,9 +14,9 @@ import { UserService } from './shared/index';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css',
+  './app.component.css',
       '../assets/css/modular-vendor.css',
-    '../assets/css/modular-admin.css',
+    '../assets/css/modular-admin-blue.css',
     '../assets/css/toggle-switch.css'
    
 

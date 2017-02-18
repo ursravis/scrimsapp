@@ -1,24 +1,29 @@
-<div class="title-block">
-    <h3 class="title">
-        <div class="col-md-4">
-        Project Details   #{{project.projectUniqueId}}
-      </div>  <div class="col-md-4"></div>
-          <div class="col-md-4">
-           
-
-            <a class="btn btn-primary" style="margin-right: 5px;" [routerLink]="['/projects',project.projectId,'cis']">
-               Clearance Items
-            </a>
-             
-                <a class="btn btn-primary" style="margin-right: 5px;">
+<div class="card sameheight-item" data-exclude="xs">
+	<div class="card-header card-header-sm bordered">
+		<div class="header-block">
+			<h3 class="title">Project Details-  #{{project.projectUniqueId}}</h3>
+		</div>
+        <ul class="nav nav-tabs pull-right" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" href="#visits" role="tab" data-toggle="tab">Header</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#downloads" role="tab" data-toggle="tab">Clearance Items</a>
+			</li>
+		</ul>
+    </div>
+	<div class="card-block" style="background: #e0e3e5;">
+		
+		<div class="tab-content" >
+			<div role="tabpanel" class="tab-pane active fade in" id="visits">
+				<div class="pull-right">
+ <a class="btn btn-primary" style="margin-right: 5px;">
                 Save
             </a>
              <a class="btn btn-primary" [routerLink]="['/projects']">
                 Back
             </a>
-         </div>
-    </h3>
-    
+
 </div>
 <div class="col-xl-12">
     <div class="card card-block sameheight-item">
@@ -32,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 form-group required">
-                    <label class="control-label col-md-4" for="releaseTitel" >Release Title</label>
+                    <label class="control-label col-md-4" for="releaseTitel">Release Title</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control boxed" id="releaseTitel" [(ngModel)]="project.releaseTitle" name="releaseTitle">
                     </div>
@@ -46,7 +51,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 form-group ">
-                    <label class="control-label col-md-4" for="StartDate" >Start Date</label>
+                    <label class="control-label col-md-4" for="StartDate">Start Date</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control boxed" id="StartDate" [(ngModel)]="project.strartDate" name="strartDate">
                     </div>
@@ -260,7 +265,7 @@
 
         </div>
     </div>
- 
+
 
     <div class="card card-block sameheight-item">
 
@@ -637,3 +642,11 @@
 
 
     </div>
+</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="downloads">
+                <clearance-list></clearance-list>
+			</div>
+		</div>
+	</div>
+</div>
