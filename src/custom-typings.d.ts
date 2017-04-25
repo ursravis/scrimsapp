@@ -63,7 +63,9 @@ declare var System: SystemJS;
 interface SystemJS {
   import: (path?: string) => Promise<any>;
 }
-
+interface Window {
+  AWS?: any; 
+}
 interface GlobalEnvironment {
   ENV: string;
   SystemJS: SystemJS;

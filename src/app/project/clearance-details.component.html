@@ -5,7 +5,7 @@
              <a class="btn btn-primary pull-right" [routerLink]="['/projects',projectId]">
                 Back
             </a>
-            <a class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <a class="btn btn-primary pull-right" style="margin-right: 5px;" (click)="saveClearanceItem()">
                 Save
             </a>
 
@@ -235,7 +235,7 @@
                     </label>
                     <div class="col-md-10">
                         <div class="images-container">
-                            <div class="image-container" *ngFor='let imageData of clearanceItem.images'>
+                            <div class="image-container" *ngFor='let imageData of images'>
                                 <div class="controls">
                                     <a href="" class="control-btn move">
                                         <i class="fa fa-arrows"></i>
@@ -253,13 +253,17 @@
                                 </div>
 
 
-                                <div class="image" style="background-image:url('{{imageData.thumbnailSrc}}')"></div>
+                                <div class="image" >
+	                    <img id="image" class="listImage" src='{{ imageData.imageURL }}' alt="" />
+                                </div>
                             </div>
 
-                            <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                            <a  class="add-image" onclick="document.getElementById('filePhoto').click();">
                                 <div class="image-container new">
                                     <div class="image">
-                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-plus">
+                                             <input type="file" name="userprofile_picture" style="display: none"  multiple id="filePhoto"  (change)="fileChange(input)"   #input />
+                                        </i>
                                     </div>
                                 </div>
                             </a>
@@ -331,7 +335,7 @@
                                 <div class="image" style="background-image:url('{{imageData.thumbnailSrc}}')"></div>
                             </div>
 
-                            <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                            <a href="#" class="add-image">
                                 <div class="image-container new">
                                     <div class="image">
                                         <i class="fa fa-plus"></i>

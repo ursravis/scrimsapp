@@ -20,7 +20,7 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 
-const API_URL = process.env.API_URL = 'http://smartalbumwebapi.azurewebsites.net/api/projects';
+const API_URL = process.env.API_URL =  'http://localhost:5000/api/';
 const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,

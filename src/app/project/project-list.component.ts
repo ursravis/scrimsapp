@@ -32,12 +32,12 @@ export class ProjectListComponent implements OnInit {
                      .subscribe(
                        projects => {
                            this.projects = projects;
-                           this.projects.forEach(element => {
-                               element.reviewQueueCount=6;
-                               element.totalCICount=22;
-                               element.statusNames=['Created', 'Cleared', 'Pending'];
-                               element.statusValues= [10, 5, 7];
-                           });
+                        //    this.projects.forEach(element => {
+                        //        element.reviewQueueCount=6;
+                        //        element.totalCICount=22;
+                        //        element.statusNames=['Created', 'Cleared', 'Pending'];
+                        //        element.statusValues= [10, 5, 7];
+                        //    });
                            },
                        error =>  this.errorMessage = <any>error);
     }

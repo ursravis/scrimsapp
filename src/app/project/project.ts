@@ -6,13 +6,13 @@ export class Project{
     reviewQueueCount:number;
     statusValues:number[];
     statusNames:string[];
-    projectUniqueId:string;
     workingTitle:string;
     releaseTitle:string;
     wprBillingCode:string;
     strartDate:string;
     productionOfficeAddress1:string;
     isPrimary:boolean;
+    projectUniqueID:string;
 
 constructor()
 {

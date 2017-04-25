@@ -10,14 +10,15 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
   <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.45.0/aws-sdk.min.js"></script>
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
 
-
+<script>
+  history.pushState({}, "entry page", location.hash.substring(1));
+</script>
 
 </head>
 

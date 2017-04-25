@@ -24,7 +24,7 @@ const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
-const API_URL = process.env.API_URL = 'http://smartalbumwebapi.azurewebsites.net/api/projects';
+const API_URL = process.env.API_URL =  'https://cors-anywhere.herokuapp.com/'+'https://93zlk3n2qb.execute-api.us-west-1.amazonaws.com/Prod/api/';
 const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,

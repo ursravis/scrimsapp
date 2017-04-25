@@ -13,7 +13,7 @@
 					<input id="month" name="view" type="radio">
 					<label for="month" onclick="">AllProjects</label>
 
-					<a class="btn btn-primary" ></a>
+					<a class="btn btn-primary" href="/" ></a>
 					</div>
 			
 
@@ -68,7 +68,7 @@
 					<div>
 						<a [routerLink]="['/projects', project.projectId]" class="">
 							<h4 class="item-title">
-								{{project.projectId}} {{project.projectName}}
+								{{project.projectUniqueID}} {{project.projectName}}
 							</h4>
 						</a>
 					</div>

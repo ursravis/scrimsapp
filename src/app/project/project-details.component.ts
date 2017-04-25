@@ -1,5 +1,5 @@
 
-import {Component,OnInit,OnDestroy,ElementRef} from '@angular/core'; 
+import {Component,OnInit,OnDestroy,ElementRef,NgZone} from '@angular/core'; 
 import {ActivatedRoute,Router} from '@angular/router';
 import {Project} from './project';
 import {ClearanceImage} from './clearance-image';
@@ -27,7 +27,9 @@ export class ProjectDetailsComponent implements OnInit,OnDestroy {
      loading :boolean;
     private sub:Subscription;
       
-    constructor(private _route:ActivatedRoute,private _router:Router,private elementRef: ElementRef,private _projectService :ProjectService)
+    constructor(private _route:ActivatedRoute,private _router:Router,private elementRef: ElementRef
+    ,private zone: NgZone
+    ,private _projectService :ProjectService)
     {
 
     }
@@ -38,15 +40,17 @@ ngOnInit():void{
                 let id = +params['id'];
                 if(id>0)
                 {
-                    this._projectService.getProject(id).subscribe(
-            project => {this.project = project;
-                this.project.projectUniqueId="UniqueID1025";
-                this.project.workingTitle="New Feature Film";
-                this.project.releaseTitle="New release Title";
-                this.project.wprBillingCode="Test";
-                this.project.strartDate="01/01/2017";
-                this.project.productionOfficeAddress1="102015 Avenue";
-                     this.project.isPrimary=true;
+                    this._projectService.getProject(id)
+                    .subscribe(
+                         p => {
+                             this.project =  p;
+                // this.project.projectUniqueId="UniqueID1025";
+                // this.project.workingTitle="New Feature Film";
+                // this.project.releaseTitle="New release Title";
+                // this.project.wprBillingCode="Test";
+                // this.project.strartDate="01/01/2017";
+                // this.project.productionOfficeAddress1="102015 Avenue";
+                //      this.project.isPrimary=true;
                 },
             error => this.errorMessage = <any>error);
                 }

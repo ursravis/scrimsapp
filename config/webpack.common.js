@@ -86,6 +86,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#module
      */
     module: {
+      
 
       rules: [
 
@@ -297,6 +298,7 @@ module.exports = function (options) {
         helpers.root('node_modules/@angular/core/src/facade/math.js')
       ),
          new ProvidePlugin({
+            jQuery: 'jquery',
             $: "jquery",
     jQuery: "jquery",
     "window.jQuery": "jquery",

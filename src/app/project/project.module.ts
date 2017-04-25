@@ -6,6 +6,7 @@ import { ProjectListComponent } from './project-list.component';
 import { ClearanceListComponent,ClearanceDetailsComponent,BarChartDirective } from './index';
 import {ProjectDetailsComponent} from './project-details.component';
 import {ProjectService } from './project.service';
+import { S3Service} from './s3-service';
 import { SharedModule } from '../shared/index';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
@@ -25,7 +26,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 
   ],
   providers:[
-    ProjectService
+    ProjectService,
+    S3Service
   ],
   
 })

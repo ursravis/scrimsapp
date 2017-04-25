@@ -22,7 +22,7 @@ import 'jquery';
 import 'bootstrap-loader';
 import 'ng2-dragula';
 import 'chart.js';
-
+//import 'aws-sdk';
 
 import './app/infra/theme-helper.js';
 if ('production' === ENV) {
