@@ -13,26 +13,23 @@ import 'rxjs/add/observable/throw';
 import { Project } from './project';
 import { ClearanceItem } from './clearance-item';
 import { SmartImage } from './smartImage';
+import {Credentials} from './credentials';
 
 @Injectable()
 export class S3Service {
     private _projectUrl = '';
     // AWS:any= window.AWS;
     private awsBucketName='clearanceitems';
+    private awsCredentials:Credentials;
     //private _projectUrl = 'http://localhost:2196/api/projects';
 private headers = new Headers({'Content-Type': 'application/json'});
     constructor(private _http: Http) { 
        this._projectUrl=process.env.API_URL;
+       this.getCredentials().subscribe(c=>this.awsCredentials=c);
        
     }
 
-    getProjects(): Observable<Project[]> {
-       
-        return this._http.get(this._projectUrl+'dashboardProjects',{headers:this.headers})
-            .map((response: Response) => <Project[]> response.json())
-            .do(data => console.log('All: ' ))
-            .catch(this.handleError);
-    }
+  
 
     
     private handleError(error: Response) {
@@ -84,6 +81,7 @@ getAllFiles(uniqueId:string):Promise<string[]>
       return  listPromise.then(data=> {
             console.log('Success');
              var objKeys = "";
+             if(data != null && data.Contents != null)
                 data.Contents.forEach(function(obj) {
                     objKeys += obj.Key + "<br>";
                     console.log(obj.Key);
@@ -104,18 +102,30 @@ getAllFiles(uniqueId:string):Promise<string[]>
 
 
 }
+
 loginAWSS3():AWS.S3{
-    //AWS.config.update({region: 'us-west-2'});
+    // if(this.awsCredentials == null || this.awsCredentials.Expiration<=new Date())
+    // {
+    // this.getCredentials()
+    // .subscribe(c=>{
+    //     this.awsCredentials=c;
+        
+    // });
+//}
+   
      window.AWS.config.region = 'us-west-2'; // 1. Enter your region
+    window.AWS.config.accessKeyId=this.awsCredentials.accessKeyId;
+    window.AWS.config.secretAccessKey=this.awsCredentials.secretAccessKey;
+    window.AWS.config.sessionToken=this.awsCredentials.sessionToken;
 
-    window.AWS.config.credentials = new window.AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'us-west-2:641f00d8-ef35-4835-9485-ead99965a139' // 2. Enter your identity pool
-    });
+    // window.AWS.config.credentials = new window.AWS.CognitoIdentityCredentials({
+    //     IdentityPoolId: 'us-west-2:641f00d8-ef35-4835-9485-ead99965a139' // 2. Enter your identity pool
+    // });
 
-    window.AWS.config.getCredentials(function(err) {
-        if (err) alert(err);
-        console.log(window.AWS.config.credentials);
-    });
+    // window.AWS.config.getCredentials(function(err) {
+    //     if (err) alert(err);
+    //     console.log(window.AWS.config.credentials);
+    // });
 
     var bucketName = 'clearanceitems'; // Enter your bucket name
     var s3 = new window.AWS.S3({
@@ -125,4 +135,13 @@ loginAWSS3():AWS.S3{
     });
     return s3;
 }
+  getCredentials(): Observable<Credentials> {
+       
+        return this._http.get(this._projectUrl+'AWSCredentials',{headers:this.headers})
+            .map((response: Response) =>
+             <Credentials> response.json()
+             )
+            .do(data => console.log('All: ' ))
+            .catch(this.handleError);
+    }
 }

@@ -110,7 +110,7 @@ reloadImages():void{
  this.s3Service.getAllFiles(this.clearanceItem.clearanceItemUniqueId)
  .then((urls)=>
  {
-    
+    if(urls != null)
      urls.forEach(url=>
      {
      var imageData=new SmartImage();
